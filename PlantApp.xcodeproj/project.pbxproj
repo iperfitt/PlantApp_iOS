@@ -16,6 +16,7 @@
 		A96BD08E1FE96F080014F9C9 /* PlantAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96BD08D1FE96F080014F9C9 /* PlantAppUITests.swift */; };
 		A96BD09C1FE975E20014F9C9 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96BD09B1FE975E20014F9C9 /* LoginController.swift */; };
 		A96BD0A01FE9811D0014F9C9 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96BD09F1FE9811D0014F9C9 /* ProfileController.swift */; };
+		A99628BC213241A400A26E04 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A99628BB213241A400A26E04 /* GoogleService-Info.plist */; };
 		A99CFDCE1FEAE671000BE0FF /* AddAPlantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99CFDCD1FEAE671000BE0FF /* AddAPlantController.swift */; };
 		A9D289231FE9CB8100D453B6 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D289221FE9CB8100D453B6 /* CustomCell.swift */; };
 		A9D289251FE9CCF000D453B6 /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D289241FE9CCF000D453B6 /* CalendarController.swift */; };
@@ -56,6 +57,7 @@
 		A96BD08F1FE96F080014F9C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A96BD09B1FE975E20014F9C9 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		A96BD09F1FE9811D0014F9C9 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		A99628BB213241A400A26E04 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A99CFDCD1FEAE671000BE0FF /* AddAPlantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAPlantController.swift; sourceTree = "<group>"; };
 		A9D289221FE9CB8100D453B6 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		A9D289241FE9CCF000D453B6 /* CalendarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarController.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				A96BD0711FE96F080014F9C9 /* Main.storyboard */,
 				A96BD0741FE96F080014F9C9 /* Assets.xcassets */,
 				A96BD0761FE96F080014F9C9 /* LaunchScreen.storyboard */,
+				A99628BB213241A400A26E04 /* GoogleService-Info.plist */,
 				A96BD0791FE96F080014F9C9 /* Info.plist */,
 				A9D289221FE9CB8100D453B6 /* CustomCell.swift */,
 			);
@@ -275,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A96BD0781FE96F080014F9C9 /* LaunchScreen.storyboard in Resources */,
+				A99628BC213241A400A26E04 /* GoogleService-Info.plist in Resources */,
 				A96BD0751FE96F080014F9C9 /* Assets.xcassets in Resources */,
 				A96BD0731FE96F080014F9C9 /* Main.storyboard in Resources */,
 			);
@@ -304,11 +308,17 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PlantApp/Pods-PlantApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

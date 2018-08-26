@@ -19,11 +19,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kiH-43-QZ2">
-                                <rect key="frame" x="210" y="440" width="42" height="30"/>
+                                <rect key="frame" x="166" y="435" width="42" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Log In"/>
                                 <connections>
-                                    <action selector="LogIn:" destination="jYG-oM-moG" eventType="touchUpInside" id="WgT-dY-1lP"/>
+                                    <action selector="logIn:" destination="jYG-oM-moG" eventType="touchUpInside" id="imB-tQ-waH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CO1-13-OFf">
+                                <rect key="frame" x="159" y="517" width="57" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Register"/>
+                                <connections>
+                                    <action selector="Register:" destination="jYG-oM-moG" eventType="touchUpInside" id="qpl-A8-i8o"/>
                                 </connections>
                             </button>
                         </subviews>
