@@ -17,6 +17,7 @@
 		A96BD09C1FE975E20014F9C9 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96BD09B1FE975E20014F9C9 /* LoginController.swift */; };
 		A96BD0A01FE9811D0014F9C9 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96BD09F1FE9811D0014F9C9 /* ProfileController.swift */; };
 		A99628BC213241A400A26E04 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A99628BB213241A400A26E04 /* GoogleService-Info.plist */; };
+		A99628C021335A2800A26E04 /* ProfileControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99628BF21335A2800A26E04 /* ProfileControllerTableViewCell.swift */; };
 		A99CFDCE1FEAE671000BE0FF /* AddAPlantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99CFDCD1FEAE671000BE0FF /* AddAPlantController.swift */; };
 		A9D289231FE9CB8100D453B6 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D289221FE9CB8100D453B6 /* CustomCell.swift */; };
 		A9D289251FE9CCF000D453B6 /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D289241FE9CCF000D453B6 /* CalendarController.swift */; };
@@ -58,6 +59,7 @@
 		A96BD09B1FE975E20014F9C9 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		A96BD09F1FE9811D0014F9C9 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		A99628BB213241A400A26E04 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A99628BF21335A2800A26E04 /* ProfileControllerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileControllerTableViewCell.swift; sourceTree = "<group>"; };
 		A99CFDCD1FEAE671000BE0FF /* AddAPlantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAPlantController.swift; sourceTree = "<group>"; };
 		A9D289221FE9CB8100D453B6 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		A9D289241FE9CCF000D453B6 /* CalendarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarController.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				A9D289261FE9CF9600D453B6 /* MyPlantsController.swift */,
 				A99CFDCD1FEAE671000BE0FF /* AddAPlantController.swift */,
 				A96BD09F1FE9811D0014F9C9 /* ProfileController.swift */,
+				A99628BF21335A2800A26E04 /* ProfileControllerTableViewCell.swift */,
 				A96BD0711FE96F080014F9C9 /* Main.storyboard */,
 				A96BD0741FE96F080014F9C9 /* Assets.xcassets */,
 				A96BD0761FE96F080014F9C9 /* LaunchScreen.storyboard */,
@@ -372,6 +375,7 @@
 				A99CFDCE1FEAE671000BE0FF /* AddAPlantController.swift in Sources */,
 				A9D289231FE9CB8100D453B6 /* CustomCell.swift in Sources */,
 				A96BD0A01FE9811D0014F9C9 /* ProfileController.swift in Sources */,
+				A99628C021335A2800A26E04 /* ProfileControllerTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

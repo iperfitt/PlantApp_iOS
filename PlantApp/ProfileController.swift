@@ -8,79 +8,32 @@
 
 import UIKit
 
-class ProfileController: UIViewController {
+class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
-    @IBOutlet weak var myPlants: UIButton!
-    @IBOutlet weak var Two: UIButton!
-    @IBOutlet weak var addAPlant: UIButton!
-    @IBOutlet weak var More: UIButton!
+     @IBOutlet var TableView: UITableView!
     
-    var myPlantsCenter : CGPoint!
-    var twoCenter : CGPoint!
-    var addAPlantCenter : CGPoint!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        myPlantsCenter = myPlants.center
-        twoCenter = Two.center
-        addAPlantCenter = addAPlant.center
-        
-        myPlants.center = More.center
-        Two.center = More.center
-        addAPlant.center = More.center
-        
-        
-    }
-    
-    @IBAction func moreClicked(_ sender: UIButton) {
-        
-        if More.backgroundColor == UIColor.white {
-            UIView.animate(withDuration: 0.3, animations: {
-                self.myPlants.alpha = 1
-                self.Two.alpha = 1
-                self.addAPlant.alpha = 1
-                
-                self.myPlants.center = self.myPlantsCenter
-                self.Two.center = self.twoCenter
-                self.addAPlant.center = self.addAPlantCenter
-            })
-            
-        } else {
-            UIView.animate(withDuration: 0.3, animations: {
-                self.myPlants.alpha = 0
-                self.Two.alpha = 0
-                self.addAPlant.alpha = 0
-                
-                self.myPlants.center = self.More.center
-                self.Two.center = self.More.center
-                self.addAPlant.center = self.More.center
-            })
-        }
-        
-        toggleButton(button: sender)
-    }
-    
-    @IBAction func myPlants(_ sender: UIButton) {
-        toggleButton(button: sender)
-        performSegue(withIdentifier: "MyPlantsSegue", sender: self)
-    }
-    
-    @IBAction func Two(_ sender: UIButton) {
-        toggleButton(button: sender)
-    }
-    
-    @IBAction func addAPlant(_ sender: UIButton) {
-        toggleButton(button: sender)
+    @IBAction func addAPlant(_ sender: Any) {
         performSegue(withIdentifier: "AddAPlantSegue", sender: self)
+        
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 100;
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProfileControllerTableViewCell
+        
+        // TODO
+        //Update nickname, last water date
+        //and image from firebase
+        
+        return cell
     }
     
     
-    func toggleButton(button: UIButton) {
-        if button.backgroundColor == UIColor.white {
-            button.backgroundColor = UIColor.black
-        } else {
-            button.backgroundColor = UIColor.white
-        }
-    }
+    
+    
+
+
 }
+

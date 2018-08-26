@@ -18,28 +18,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kiH-43-QZ2">
-                                <rect key="frame" x="166" y="435" width="42" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Log In"/>
-                                <connections>
-                                    <action selector="logIn:" destination="jYG-oM-moG" eventType="touchUpInside" id="imB-tQ-waH"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CO1-13-OFf">
-                                <rect key="frame" x="159" y="517" width="57" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Register"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CO1-13-OFf">
+                                <rect key="frame" x="128" y="517" width="120" height="30"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleColor" red="0.87456655502319336" green="0.85813039541244507" blue="0.52009350061416626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="Register:" destination="jYG-oM-moG" eventType="touchUpInside" id="qpl-A8-i8o"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W1C-hS-pnw">
+                                <rect key="frame" x="0.0" y="555" width="375" height="112"/>
+                                <color key="backgroundColor" red="0.1501319408416748" green="0.22386491298675537" blue="0.19971555471420288" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="112" id="WIr-Qx-cxD"/>
+                                    <constraint firstAttribute="width" constant="375" id="gfv-px-js0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.89510536193847656" green="0.37394940853118896" blue="0.10775729268789291" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kiH-43-QZ2">
+                                <rect key="frame" x="128" y="459" width="120" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Log In">
+                                    <color key="titleColor" red="0.87456655502319336" green="0.85813039541244507" blue="0.52009350061416626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="logIn:" destination="jYG-oM-moG" eventType="touchUpInside" id="imB-tQ-waH"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.11133245378732681" green="0.47531008720397949" blue="0.4197286069393158" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="W1C-hS-pnw" firstAttribute="bottom" secondItem="9Vq-Mx-pe8" secondAttribute="bottom" id="26S-ad-lqp"/>
+                            <constraint firstItem="W1C-hS-pnw" firstAttribute="leading" secondItem="9Vq-Mx-pe8" secondAttribute="leading" id="TAb-ew-ymU"/>
+                            <constraint firstItem="W1C-hS-pnw" firstAttribute="top" secondItem="CO1-13-OFf" secondAttribute="bottom" constant="8" id="XyT-Db-l78"/>
+                            <constraint firstItem="W1C-hS-pnw" firstAttribute="trailing" secondItem="9Vq-Mx-pe8" secondAttribute="trailing" id="glB-pR-HkA"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="9Vq-Mx-pe8"/>
                     </view>
                     <navigationItem key="navigationItem" id="c1a-xw-aVh"/>
                     <connections>
+                        <outlet property="loginLabel" destination="W1C-hS-pnw" id="UwW-nV-Rod"/>
                         <segue destination="OAj-vb-Pvl" kind="show" identifier="ProfileSegue" id="h2I-Ny-u5I"/>
                     </connections>
                 </viewController>
@@ -55,49 +76,101 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKM-s4-8c1">
-                                <rect key="frame" x="221" y="303" width="41" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="2"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSi-Xw-srB">
+                                <rect key="frame" x="0.0" y="64" width="375" height="58"/>
+                                <color key="backgroundColor" red="0.1501319408416748" green="0.22386491298675537" blue="0.19971555471420288" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="KEI-sD-PQR"/>
+                                    <constraint firstAttribute="width" constant="375" id="TRY-Ze-o78"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.87456655502319336" green="0.85813039541244507" blue="0.52009350061416626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vc8-O0-e92">
+                                <rect key="frame" x="0.0" y="130" width="375" height="537"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="251" id="LSt-f8-kCJ" customClass="ProfileControllerTableViewCell" customModule="PlantApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="251"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LSt-f8-kCJ" id="l0g-w5-vht">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="250.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nickname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4v-fZ-JVh">
+                                                    <rect key="frame" x="198" y="34" width="177" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Watered____ Days Ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QZd-na-XTL">
+                                                    <rect key="frame" x="198" y="78" width="177" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lEn-fw-Zin">
+                                                    <rect key="frame" x="15" y="34" width="167" height="160"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lastWaterDate" destination="QZd-na-XTL" id="50R-uB-ADq"/>
+                                            <outlet property="nickname" destination="e4v-fZ-JVh" id="Qaj-wq-OrU"/>
+                                            <outlet property="plantImage" destination="lEn-fw-Zin" id="uoN-DK-i3P"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
-                                    <action selector="Two:" destination="OAj-vb-Pvl" eventType="touchUpInside" id="ls8-Jw-nwx"/>
+                                    <outlet property="dataSource" destination="OAj-vb-Pvl" id="KAT-vS-vWS"/>
+                                    <outlet property="delegate" destination="OAj-vb-Pvl" id="1OK-8x-TiJ"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s66-Ub-Cmc">
+                                <rect key="frame" x="259" y="71" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="51"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" red="0.11133245378732681" green="0.47531008720397949" blue="0.4197286069393158" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addAPlant:" destination="OAj-vb-Pvl" eventType="touchUpInside" id="mG3-MA-gp6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LAr-5G-6Jr" userLabel="addAPlant">
-                                <rect key="frame" x="55" y="303" width="78" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9je-ue-dE6">
+                                <rect key="frame" x="297" y="78" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Add a plant"/>
-                                <connections>
-                                    <action selector="addAPlant:" destination="OAj-vb-Pvl" eventType="touchUpInside" id="asn-pJ-6Ek"/>
-                                </connections>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="∆">
+                                    <color key="titleColor" red="0.87456655502319336" green="0.85813039541244507" blue="0.52009350061416626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                             </button>
-                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G4R-h9-V9N" userLabel="myPlants">
-                                <rect key="frame" x="128" y="239" width="67" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HKA-Eo-0mE">
+                                <rect key="frame" x="335" y="86" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="My Plants"/>
-                                <connections>
-                                    <action selector="myPlants:" destination="OAj-vb-Pvl" eventType="touchUpInside" id="abU-fd-hZk"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xfn-MI-Q4K">
-                                <rect key="frame" x="143" y="367" width="36" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="More"/>
-                                <connections>
-                                    <action selector="moreClicked:" destination="OAj-vb-Pvl" eventType="touchUpInside" id="qne-Id-r08"/>
-                                </connections>
+                                <fontDescription key="fontDescription" type="system" pointSize="73"/>
+                                <state key="normal" title="*">
+                                    <color key="titleColor" red="0.25940811634063721" green="0.672474205493927" blue="0.51441943645477295" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Vc8-O0-e92" firstAttribute="top" secondItem="xSi-Xw-srB" secondAttribute="bottom" constant="53" id="07b-6P-eYL"/>
+                            <constraint firstItem="xSi-Xw-srB" firstAttribute="trailing" secondItem="cvU-7d-3eZ" secondAttribute="trailing" id="jhi-B2-Ax0"/>
+                            <constraint firstItem="xSi-Xw-srB" firstAttribute="top" secondItem="cvU-7d-3eZ" secondAttribute="top" id="yUT-hU-lO9"/>
+                            <constraint firstItem="xSi-Xw-srB" firstAttribute="leading" secondItem="cvU-7d-3eZ" secondAttribute="leading" id="ye1-zm-pNm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="cvU-7d-3eZ"/>
                     </view>
                     <connections>
-                        <outlet property="More" destination="xfn-MI-Q4K" id="r6U-J9-rZA"/>
-                        <outlet property="Two" destination="fKM-s4-8c1" id="ull-co-lHU"/>
-                        <outlet property="addAPlant" destination="LAr-5G-6Jr" id="ijE-ag-ICD"/>
-                        <outlet property="myPlants" destination="G4R-h9-V9N" id="J7H-Nj-Yo6"/>
+                        <outlet property="TableView" destination="Vc8-O0-e92" id="sCL-cK-37U"/>
                         <segue destination="nnn-uw-rXu" kind="show" identifier="MyPlantsSegue" id="oV3-ap-jZm"/>
-                        <segue destination="6eg-yc-Ue1" kind="show" identifier="AddAPlantSegue" id="vSm-jv-vll"/>
+                        <segue destination="6eg-yc-Ue1" kind="show" identifier="AddAPlantSegue" id="H4e-5G-zRG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Yk-Q1-PoZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -111,7 +184,7 @@
                     <view key="view" contentMode="scaleToFill" id="DQz-wI-eSt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.25940811634063721" green="0.672474205493927" blue="0.51441943645477295" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="b20-YX-Vn4"/>
                     </view>
                 </viewController>

@@ -18,13 +18,15 @@ class LoginController: UIViewController {
     let email = UITextField(frame: CGRect(x: 20, y: 120, width: 300, height: 40))
     let password = UITextField(frame: CGRect(x: 20, y: 120, width: 300, height: 40))
     
+     @IBOutlet var loginLabel: UILabel!
+    
     @IBAction func logIn(_ sender: Any) {
         if let email = self.email.text, let password = self.password.text {
             
             Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
                 
                 if let error = error {
-                    print("Incorrect Credentials. Please Try Again")
+                    self.loginLabel.text = "Incorrect Credentials. Please Try Again"
                 }
                 else {
                     self.performSegue(withIdentifier: "ProfileSegue", sender: self)
@@ -40,14 +42,15 @@ class LoginController: UIViewController {
         Auth.auth().createUser(withEmail: email, password: password, completion: { (user: User?, error: Error?) in
             
             if error != nil {
+                self.loginLabel.text = error?.localizedDescription as? String
                 print(error)
                 return
                 
             }
             
-            guard let uid = user?.uid else {
-                return
-            }
+//            guard let uid = user?.uid else {
+//                return
+//            }
     })
         }
     }
