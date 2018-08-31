@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddAPlantController: UIViewController {
+class AddAPlantController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     let nickName = UITextField(frame: CGRect(x: 20, y: 120, width: 300, height: 40))
     let commonName = UITextField(frame: CGRect(x: 20, y: 120, width: 300, height: 40))
@@ -20,9 +20,38 @@ class AddAPlantController: UIViewController {
     let waterNeeds = UITextField(frame: CGRect(x: 20, y: 120, width: 300, height: 40))
     let fertilizeNeeds = UITextField(frame: CGRect(x: 20, y: 120, width: 300, height: 40))
     
+    @IBOutlet var savePlant: UIButton!
+    
+    @IBOutlet var previewImage: UIImageView!
+    
+    @IBOutlet var addAPhoto: UIButton!
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+            self.previewImage.image = image
+            addAPhoto.isHidden = true
+            savePlant.isHidden = false
+            
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func selectPhoto(_ sender: Any) {
+        picker.allowsEditing = true
+        picker.sourceType = .photoLibrary
+        
+        self.present(picker, animated: true, completion: nil)
+    }
+    
+    @IBAction func postPlant(_ sender: Any) {
+    }
+    
+    let picker = UIImagePickerController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         AddTextFields()
+        picker.delegate = self
     }
     
     func AddTextFields() {

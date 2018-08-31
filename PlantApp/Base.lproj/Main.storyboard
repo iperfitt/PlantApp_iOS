@@ -184,13 +184,67 @@
                     <view key="view" contentMode="scaleToFill" id="DQz-wI-eSt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ilg-vg-q7A">
+                                <rect key="frame" x="-8" y="568" width="389" height="44"/>
+                                <color key="backgroundColor" red="0.1501319408416748" green="0.22386491298675537" blue="0.19971555471420288" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="389" id="Qe5-Fn-mrU"/>
+                                    <constraint firstAttribute="height" constant="44" id="hi5-hk-SMU"/>
+                                </constraints>
+                                <state key="normal" title="Add A Photo">
+                                    <color key="titleColor" red="0.87456655502319336" green="0.85813039541244507" blue="0.52009350061416626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectPhoto:" destination="6eg-yc-Ue1" eventType="touchUpInside" id="hu1-lT-IQm"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="erS-EN-AOs">
+                                <rect key="frame" x="0.0" y="496" width="375" height="171"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erd-5O-jxP">
+                                <rect key="frame" x="77" y="437" width="235" height="30"/>
+                                <color key="backgroundColor" red="0.1501319408416748" green="0.22386491298675537" blue="0.19971555471420288" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Save Plant">
+                                    <color key="titleColor" red="0.87456655500000002" green="0.85813039540000002" blue="0.52009350060000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="postPlant:" destination="6eg-yc-Ue1" eventType="touchUpInside" id="Eaw-Ft-GMI"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.25940811634063721" green="0.672474205493927" blue="0.51441943645477295" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="erS-EN-AOs" firstAttribute="top" secondItem="b20-YX-Vn4" secondAttribute="top" constant="432" id="5C3-SG-bje"/>
+                            <constraint firstItem="erS-EN-AOs" firstAttribute="bottom" secondItem="b20-YX-Vn4" secondAttribute="bottom" id="5id-3f-0e8"/>
+                            <constraint firstItem="erS-EN-AOs" firstAttribute="leading" secondItem="b20-YX-Vn4" secondAttribute="leading" id="CjU-Oe-ezs"/>
+                            <constraint firstAttribute="bottom" secondItem="erS-EN-AOs" secondAttribute="bottom" id="Com-Qb-oDG"/>
+                            <constraint firstAttribute="trailing" secondItem="Ilg-vg-q7A" secondAttribute="trailing" constant="-6" id="IoO-YE-Wip"/>
+                            <constraint firstItem="Ilg-vg-q7A" firstAttribute="top" secondItem="b20-YX-Vn4" secondAttribute="top" constant="504" id="Sce-hv-El7"/>
+                            <constraint firstItem="erS-EN-AOs" firstAttribute="centerY" secondItem="b20-YX-Vn4" secondAttribute="centerY" id="SoA-w0-vgK"/>
+                            <constraint firstItem="erS-EN-AOs" firstAttribute="top" secondItem="erd-5O-jxP" secondAttribute="bottom" constant="379" id="UAt-VQ-hF8"/>
+                            <constraint firstAttribute="trailing" secondItem="erS-EN-AOs" secondAttribute="trailing" id="Whc-0Z-7Jh"/>
+                            <constraint firstItem="Ilg-vg-q7A" firstAttribute="leading" secondItem="DQz-wI-eSt" secondAttribute="leading" constant="-8" id="cTp-sS-mAu"/>
+                            <constraint firstItem="b20-YX-Vn4" firstAttribute="bottom" secondItem="Ilg-vg-q7A" secondAttribute="bottom" constant="55" id="caB-2u-0AU"/>
+                            <constraint firstItem="erS-EN-AOs" firstAttribute="leading" secondItem="b20-YX-Vn4" secondAttribute="leading" id="eXA-g5-ra6"/>
+                            <constraint firstItem="erS-EN-AOs" firstAttribute="trailing" secondItem="b20-YX-Vn4" secondAttribute="trailing" id="eyJ-WB-khq"/>
+                            <constraint firstItem="erS-EN-AOs" firstAttribute="trailing" secondItem="b20-YX-Vn4" secondAttribute="trailing" id="jpF-4u-2w6"/>
+                            <constraint firstItem="erS-EN-AOs" firstAttribute="bottom" secondItem="b20-YX-Vn4" secondAttribute="bottom" id="q4e-pS-d7m"/>
+                            <constraint firstItem="erS-EN-AOs" firstAttribute="leading" secondItem="b20-YX-Vn4" secondAttribute="leading" id="qk6-vm-rur"/>
+                            <constraint firstItem="erS-EN-AOs" firstAttribute="top" secondItem="erd-5O-jxP" secondAttribute="bottom" constant="29" id="qsW-n1-8mH"/>
+                            <constraint firstItem="erS-EN-AOs" firstAttribute="centerX" secondItem="b20-YX-Vn4" secondAttribute="centerX" id="yMg-jP-ysO"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="b20-YX-Vn4"/>
                     </view>
+                    <connections>
+                        <outlet property="addAPhoto" destination="Ilg-vg-q7A" id="XRo-5o-9HS"/>
+                        <outlet property="previewImage" destination="erS-EN-AOs" id="HNR-tb-oDc"/>
+                        <outlet property="savePlant" destination="erd-5O-jxP" id="XAV-fd-OH4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EB6-b5-W6T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2294" y="-803"/>
+            <point key="canvasLocation" x="2293.5999999999999" y="-803.74812593703155"/>
         </scene>
         <!--My Plants Controller-->
         <scene sceneID="DbM-3m-Wty">
