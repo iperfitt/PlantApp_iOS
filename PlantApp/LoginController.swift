@@ -25,7 +25,7 @@ class LoginController: UIViewController {
             
             Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
                 
-                if let error = error {
+                if error != nil {
                     self.loginLabel.text = "Incorrect Credentials. Please Try Again"
                 }
                 else {
@@ -42,8 +42,8 @@ class LoginController: UIViewController {
         Auth.auth().createUser(withEmail: email, password: password, completion: { (user: User?, error: Error?) in
             
             if error != nil {
-                self.loginLabel.text = error?.localizedDescription as? String
-                print(error)
+                self.loginLabel.text = error?.localizedDescription
+                print(error!)
                 return
                 
             }
