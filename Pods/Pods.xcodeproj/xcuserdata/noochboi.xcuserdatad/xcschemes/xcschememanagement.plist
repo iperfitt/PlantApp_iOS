@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>GTMSessionFetcher.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>GoogleToolboxForMac.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>JTAppleCalendar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-PlantApp.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>nanopb.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>186432123FE7656F192998F3DD611D33</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1AAD139F0A46A8B052A5784466C0E563</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2E3D37501AE767F3B5B1DE94139533D0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8364BB258018143B83798DE31C13546D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8AA738E3681A6E25E6E0813C9E6CBF34</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
