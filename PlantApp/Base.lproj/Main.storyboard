@@ -336,7 +336,6 @@
                         <outlet property="commonName" destination="DQz-wI-eSt" id="hhi-cx-600"/>
                         <outlet property="dateLasWatered" destination="IaD-nU-b51" id="jlu-0F-jt5"/>
                         <outlet property="datePurchased" destination="QzZ-zs-7rS" id="ReC-8C-BRo"/>
-                        <outlet property="fertilizeNeeds" destination="Ejh-4E-H27" id="2oz-pJ-SiU"/>
                         <outlet property="genus" destination="66d-ZV-Aeu" id="Kgq-Bi-pE5"/>
                         <outlet property="lightNeeds" destination="c7w-ca-R1u" id="8H2-H8-XIS"/>
                         <outlet property="nickName" destination="B1f-4C-7YZ" id="RnQ-AS-Pve"/>
