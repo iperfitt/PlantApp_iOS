@@ -8,6 +8,8 @@
 
 import UIKit
 
+import FirebaseStorage
+
 class AddAPlantController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var nickName: UITextField!
@@ -34,8 +36,7 @@ class AddAPlantController: UIViewController, UIImagePickerControllerDelegate, UI
     
     @IBOutlet var addAPhoto: UIButton!
     
-    let storageRef = storage.reference()
-    
+
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
             self.previewImage.image = image
