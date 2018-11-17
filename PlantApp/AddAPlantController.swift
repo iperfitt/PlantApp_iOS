@@ -16,7 +16,7 @@ class AddAPlantController: UIViewController, UIImagePickerControllerDelegate, UI
     
     @IBOutlet weak var nickName: UITextField!
     
-    @IBOutlet var commonName: UIView!
+    @IBOutlet var commonName: UITextField!
     
     @IBOutlet weak var species: UITextField!
 
@@ -38,11 +38,13 @@ class AddAPlantController: UIViewController, UIImagePickerControllerDelegate, UI
     
     @IBOutlet var addAPhoto: UIButton!
     
-    var chosenImage : UIImage
+    var chosenImage : UIImage!
     
     let storageRef = Storage.storage().reference()
     
     let databaseRef = Database.database().reference() as DatabaseReference!
+    
+    let picker = UIImagePickerController()
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
@@ -63,7 +65,6 @@ class AddAPlantController: UIViewController, UIImagePickerControllerDelegate, UI
     }
     
     @IBAction func postPlant(_ sender: Any) {
-        
             var data = NSData()
             data = UIImageJPEGRepresentation(chosenImage, 0.8)! as NSData
             let filePath = "\(Auth.auth().currentUser!.uid)/\("usersPhotos")"
@@ -74,18 +75,13 @@ class AddAPlantController: UIViewController, UIImagePickerControllerDelegate, UI
                     print(error.localizedDescription)
                     return
                 } else{
-                    //store downloadURL
                     let downloadURL = metaData!.downloadURL()!.absoluteString
-                    //store downloadURL at database
-                    self.databaseRef?.child("users").child(Auth.auth().currentUser!.uid).updateChildValues(["usersPhotos": downloadURL])
+                    self.databaseRef?.child("users").child(Auth.auth().currentUser!.uid).updateChildValues(["usersPhotos": downloadURL,
+                        "nickName": self.nickName.text!, "commonName": self.commonName.text!, "species": self.species.text!, "genus": self.genus.text!, "datePurchased":self.datePurchased.text!, "dateLastWatered": self.dateLastWatered.text!,
+                        "lightNeeds": self.lightNeeds.text!, "waterNeeds": self.waterNeeds.text!, "fertilizeNeeds": self.fertilizeNeeds.text!])
             }
         }
     }
-    
-        
-        
-    
-    let picker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()

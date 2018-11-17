@@ -41,11 +41,8 @@ class LoginController: UIViewController {
             if error != nil {
                 self.loginLabel.text = error?.localizedDescription
                 print(error!)
-                return
-                
-            }
-            
-    })
+                }
+            })
         }
     }
     
