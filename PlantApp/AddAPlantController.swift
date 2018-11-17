@@ -8,7 +8,8 @@
 
 import UIKit
 
-import FirebaseStorage
+import Firebase
+
 
 class AddAPlantController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -36,12 +37,18 @@ class AddAPlantController: UIViewController, UIImagePickerControllerDelegate, UI
     
     @IBOutlet var addAPhoto: UIButton!
     
+    var chosenImage : UIImage
+    
+    let storageRef = Storage.storage().reference()
+    
+    let databaseRef = Data
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
             self.previewImage.image = image
             addAPhoto.isHidden = true
             savePlant.isHidden = false
+            chosenImage = image
             
         }
         self.dismiss(animated: true, completion: nil)
@@ -55,7 +62,27 @@ class AddAPlantController: UIViewController, UIImagePickerControllerDelegate, UI
     }
     
     @IBAction func postPlant(_ sender: Any) {
+        
+            var data = NSData()
+            data = UIImageJPEGRepresentation(chosenImage, 0.8)! as NSData
+            let filePath = "\(Auth.auth().currentUser!.uid)/\("userPhoto")"
+            let metaData = StorageMetadata()
+            metaData.contentType = "image/jpg"
+            self.storageRef.child(filePath).putData(data as Data, metadata: metaData){(metaData,error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                    return
+                }else{
+                    //store downloadURL
+                    let downloadURL = metaData!.downloadURL()!.absoluteString
+                    //store downloadURL at database
+                    self.databaseRef.child("users").child(Auth.auth()!.currentUser!.uid).updateChildValues(["userPhoto": downloadURL])
+            }
+        }
     }
+    
+        
+        
     
     let picker = UIImagePickerController()
     
