@@ -28,6 +28,7 @@ class LoginController: UIViewController {
                     self.loginLabel.text = error?.localizedDescription
                 }
                 else {
+                    print(Auth.auth().currentUser!.uid);
                     self.performSegue(withIdentifier: "ProfileSegue", sender: self)
                 }
             }
