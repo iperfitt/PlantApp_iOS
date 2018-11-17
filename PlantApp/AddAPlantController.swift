@@ -9,6 +9,7 @@
 import UIKit
 
 import Firebase
+import FirebaseDatabase
 
 
 class AddAPlantController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -41,9 +42,7 @@ class AddAPlantController: UIViewController, UIImagePickerControllerDelegate, UI
     
     let storageRef = Storage.storage().reference()
     
-    var ref: DatabaseReference!
-    
-    ref = Database.database().reference()
+    let databaseRef = Database.database().reference() as DatabaseReference!
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
@@ -67,18 +66,18 @@ class AddAPlantController: UIViewController, UIImagePickerControllerDelegate, UI
         
             var data = NSData()
             data = UIImageJPEGRepresentation(chosenImage, 0.8)! as NSData
-            let filePath = "\(Auth.auth().currentUser!.uid)/\("userPhoto")"
+            let filePath = "\(Auth.auth().currentUser!.uid)/\("usersPhotos")"
             let metaData = StorageMetadata()
             metaData.contentType = "image/jpg"
             self.storageRef.child(filePath).putData(data as Data, metadata: metaData){(metaData,error) in
                 if let error = error {
                     print(error.localizedDescription)
                     return
-                }else{
+                } else{
                     //store downloadURL
                     let downloadURL = metaData!.downloadURL()!.absoluteString
                     //store downloadURL at database
-                    self.databaseRef.child("users").child(Auth.auth()!.currentUser!.uid).updateChildValues(["userPhoto": downloadURL])
+                    self.databaseRef?.child("users").child(Auth.auth().currentUser!.uid).updateChildValues(["usersPhotos": downloadURL])
             }
         }
     }
