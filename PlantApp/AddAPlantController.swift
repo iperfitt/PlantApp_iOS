@@ -41,7 +41,9 @@ class AddAPlantController: UIViewController, UIImagePickerControllerDelegate, UI
     
     let storageRef = Storage.storage().reference()
     
-    let databaseRef = Data
+    var ref: DatabaseReference!
+    
+    ref = Database.database().reference()
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
