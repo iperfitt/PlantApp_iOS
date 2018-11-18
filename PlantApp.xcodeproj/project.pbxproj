@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		39E691030ACBDA74E63AAB8D /* Pods_PlantApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF064C1BC08C19DFCFE7305C /* Pods_PlantApp.framework */; };
+		44C01FCF21A22DB100B7855B /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C01FCE21A22DB100B7855B /* MyCollectionViewCell.swift */; };
+		44C01FD121A22F2A00B7855B /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C01FD021A22F2A00B7855B /* CollectionViewController.swift */; };
 		A96BD06E1FE96F080014F9C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96BD06D1FE96F080014F9C9 /* AppDelegate.swift */; };
 		A96BD0731FE96F080014F9C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A96BD0711FE96F080014F9C9 /* Main.storyboard */; };
 		A96BD0751FE96F080014F9C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A96BD0741FE96F080014F9C9 /* Assets.xcassets */; };
@@ -19,9 +21,7 @@
 		A99628BC213241A400A26E04 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A99628BB213241A400A26E04 /* GoogleService-Info.plist */; };
 		A99628C021335A2800A26E04 /* ProfileControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99628BF21335A2800A26E04 /* ProfileControllerTableViewCell.swift */; };
 		A99CFDCE1FEAE671000BE0FF /* AddAPlantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99CFDCD1FEAE671000BE0FF /* AddAPlantController.swift */; };
-		A9D289231FE9CB8100D453B6 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D289221FE9CB8100D453B6 /* CustomCell.swift */; };
 		A9D289251FE9CCF000D453B6 /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D289241FE9CCF000D453B6 /* CalendarController.swift */; };
-		A9D289271FE9CF9600D453B6 /* MyPlantsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D289261FE9CF9600D453B6 /* MyPlantsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +43,8 @@
 
 /* Begin PBXFileReference section */
 		05EE3C1987BDC8278A27A421 /* Pods-PlantApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlantApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-PlantApp/Pods-PlantApp.release.xcconfig"; sourceTree = "<group>"; };
+		44C01FCE21A22DB100B7855B /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
+		44C01FD021A22F2A00B7855B /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		452C481D59D124CB68C68A3A /* Pods-PlantApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlantApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlantApp/Pods-PlantApp.debug.xcconfig"; sourceTree = "<group>"; };
 		A96BD06A1FE96F080014F9C9 /* PlantApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A96BD06D1FE96F080014F9C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -61,9 +63,7 @@
 		A99628BB213241A400A26E04 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A99628BF21335A2800A26E04 /* ProfileControllerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileControllerTableViewCell.swift; sourceTree = "<group>"; };
 		A99CFDCD1FEAE671000BE0FF /* AddAPlantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAPlantController.swift; sourceTree = "<group>"; };
-		A9D289221FE9CB8100D453B6 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		A9D289241FE9CCF000D453B6 /* CalendarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarController.swift; sourceTree = "<group>"; };
-		A9D289261FE9CF9600D453B6 /* MyPlantsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantsController.swift; sourceTree = "<group>"; };
 		EF064C1BC08C19DFCFE7305C /* Pods_PlantApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlantApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -135,10 +135,11 @@
 		A96BD06C1FE96F080014F9C9 /* PlantApp */ = {
 			isa = PBXGroup;
 			children = (
+				44C01FCE21A22DB100B7855B /* MyCollectionViewCell.swift */,
+				44C01FD021A22F2A00B7855B /* CollectionViewController.swift */,
 				A96BD06D1FE96F080014F9C9 /* AppDelegate.swift */,
 				A9D289241FE9CCF000D453B6 /* CalendarController.swift */,
 				A96BD09B1FE975E20014F9C9 /* LoginController.swift */,
-				A9D289261FE9CF9600D453B6 /* MyPlantsController.swift */,
 				A99CFDCD1FEAE671000BE0FF /* AddAPlantController.swift */,
 				A96BD09F1FE9811D0014F9C9 /* ProfileController.swift */,
 				A99628BF21335A2800A26E04 /* ProfileControllerTableViewCell.swift */,
@@ -147,7 +148,6 @@
 				A96BD0761FE96F080014F9C9 /* LaunchScreen.storyboard */,
 				A99628BB213241A400A26E04 /* GoogleService-Info.plist */,
 				A96BD0791FE96F080014F9C9 /* Info.plist */,
-				A9D289221FE9CB8100D453B6 /* CustomCell.swift */,
 			);
 			path = PlantApp;
 			sourceTree = "<group>";
@@ -356,11 +356,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A96BD09C1FE975E20014F9C9 /* LoginController.swift in Sources */,
-				A9D289271FE9CF9600D453B6 /* MyPlantsController.swift in Sources */,
 				A96BD06E1FE96F080014F9C9 /* AppDelegate.swift in Sources */,
+				44C01FCF21A22DB100B7855B /* MyCollectionViewCell.swift in Sources */,
 				A9D289251FE9CCF000D453B6 /* CalendarController.swift in Sources */,
+				44C01FD121A22F2A00B7855B /* CollectionViewController.swift in Sources */,
 				A99CFDCE1FEAE671000BE0FF /* AddAPlantController.swift in Sources */,
-				A9D289231FE9CB8100D453B6 /* CustomCell.swift in Sources */,
 				A96BD0A01FE9811D0014F9C9 /* ProfileController.swift in Sources */,
 				A99628C021335A2800A26E04 /* ProfileControllerTableViewCell.swift in Sources */,
 			);

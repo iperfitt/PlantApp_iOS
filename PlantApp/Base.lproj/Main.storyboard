@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -165,6 +166,9 @@
                                 <state key="normal" title="∆">
                                     <color key="titleColor" red="0.87456655502319336" green="0.85813039541244507" blue="0.52009350061416626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="changeView:" destination="OAj-vb-Pvl" eventType="touchUpInside" id="73F-Yf-hcG"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HKA-Eo-0mE">
                                 <rect key="frame" x="335" y="86" width="30" height="30"/>
@@ -182,13 +186,80 @@
                     </view>
                     <connections>
                         <outlet property="TableView" destination="Vc8-O0-e92" id="sCL-cK-37U"/>
-                        <segue destination="nnn-uw-rXu" kind="show" identifier="MyPlantsSegue" id="oV3-ap-jZm"/>
                         <segue destination="6eg-yc-Ue1" kind="show" identifier="AddAPlantSegue" id="H4e-5G-zRG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Yk-Q1-PoZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1365.5999999999999" y="2.2488755622188905"/>
+        </scene>
+        <!--CollectionViewController-->
+        <scene sceneID="Qf4-7J-mz7">
+            <objects>
+                <viewController title="CollectionViewController" id="Jp6-Af-t2r" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8Y6-9U-llL"/>
+                        <viewControllerLayoutGuide type="bottom" id="V3O-AU-VZB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="w1F-ey-5UO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OLo-Rp-LQC">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="OLo-Rp-LQC" secondAttribute="height" multiplier="375:667" id="G8j-Rh-gxz"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mL4-Um-CS4">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="Iy9-cY-Hoc" customClass="MyCollectionViewCell" customModule="PlantApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGb-gt-S2a">
+                                                    <rect key="frame" x="4" y="15" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="gGb-gt-S2a" firstAttribute="centerX" secondItem="Iy9-cY-Hoc" secondAttribute="centerX" id="Pcm-Kw-6bw"/>
+                                            <constraint firstItem="gGb-gt-S2a" firstAttribute="centerY" secondItem="Iy9-cY-Hoc" secondAttribute="centerY" id="g8A-E0-a0Z"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="label" destination="gGb-gt-S2a" id="fuk-xD-ny0"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Jp6-Af-t2r" id="xan-74-hL7"/>
+                                    <outlet property="delegate" destination="Jp6-Af-t2r" id="Ww8-J1-IXn"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="V3O-AU-VZB" firstAttribute="top" secondItem="OLo-Rp-LQC" secondAttribute="bottom" id="2ai-hQ-IAT"/>
+                            <constraint firstItem="OLo-Rp-LQC" firstAttribute="leading" secondItem="w1F-ey-5UO" secondAttribute="leading" id="BSL-vk-l9q"/>
+                            <constraint firstItem="OLo-Rp-LQC" firstAttribute="top" secondItem="w1F-ey-5UO" secondAttribute="top" id="E2a-j0-QdS"/>
+                            <constraint firstAttribute="trailing" secondItem="OLo-Rp-LQC" secondAttribute="trailing" id="kab-Aq-GtD"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JIH-OL-cOH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2168.8000000000002" y="1.3493253373313345"/>
         </scene>
         <!--AddA Plant Controller-->
         <scene sceneID="ASb-1g-Vw5">
@@ -351,37 +422,6 @@
             </objects>
             <point key="canvasLocation" x="2293.5999999999999" y="-803.74812593703155"/>
         </scene>
-        <!--My Plants Controller-->
-        <scene sceneID="DbM-3m-Wty">
-            <objects>
-                <viewController id="nnn-uw-rXu" customClass="MyPlantsController" customModule="PlantApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Iru-xG-qpF"/>
-                        <viewControllerLayoutGuide type="bottom" id="b4F-Bn-yX5"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="waE-If-vgj">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5xu-2I-1Z1">
-                                <rect key="frame" x="121" y="449" width="62" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Calendar"/>
-                                <connections>
-                                    <action selector="Calendar:" destination="nnn-uw-rXu" eventType="touchUpInside" id="FYh-RZ-0Hx"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                    <connections>
-                        <segue destination="oSW-W4-e0W" kind="show" identifier="CalendarSegue" id="rmv-7X-O6o"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Gpe-jb-9aq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2338" y="4"/>
-        </scene>
         <!--Ib Calendar Data Source-->
         <scene sceneID="t8E-JO-wDu">
             <objects>
@@ -543,7 +583,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UMF-Tg-cQh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3357.5999999999999" y="2.2488755622188905"/>
+            <point key="canvasLocation" x="2518" y="775"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="v53-PC-mte">

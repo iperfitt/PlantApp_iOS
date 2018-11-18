@@ -11,9 +11,9 @@ import FirebaseDatabase
 import FirebaseAuth
 import FirebaseStorage
 
-class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-     @IBOutlet var TableView: UITableView!
+    @IBOutlet var TableView: UITableView!
     
     let databaseRef = Database.database().reference() as DatabaseReference!
     
@@ -29,8 +29,12 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     @IBAction func addAPlant(_ sender: Any) {
         performSegue(withIdentifier: "AddAPlantSegue", sender: self)
-        
     }
+    
+    @IBAction func changeView(_ sender: Any) {
+        performSegue(withIdentifier: "CollectionViewSegue", sender: self)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return downloadLinks.count;
     }
