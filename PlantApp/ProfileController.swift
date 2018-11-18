@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseAuth
+import FirebaseStorage
 
 class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
@@ -22,47 +23,56 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     var downloadLinks = [String]()
     
+    var photoArray = [UIImage]()
+    
+    var index  = 0
+    
     @IBAction func addAPlant(_ sender: Any) {
         performSegue(withIdentifier: "AddAPlantSegue", sender: self)
         
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100;
+        return downloadLinks.count;
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProfileControllerTableViewCell
         
+        
+        //cell.nickname =
+        //cell.lastWaterDate =
+        cell.plantImage.image = photoArray[index]
+        index += 1
+        
         return cell
     }
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        databaseRef?.child("users").child(userID).child("usersPhotos").observeSingleEvent(of: .value, with: { snapshot in
-            // check if user has photo
+    func getPhotoURLS() {
+        databaseRef?.child("users").child(userID).child("usersPhotos").observeSingleEvent(of: .value, with: { (snapshot) in
+            //initialize photo download array
             for photoURL in snapshot.children.allObjects as! [String] {
                 self.downloadLinks.append(photoURL)
                 
-                }
-            })
-            
-            
-//            if snapshot.hasChild("userPhoto"){
-//                // set image locatin
-//                let filePath = "\(userID)/\("userPhoto")"
-//                // Assuming a < 10MB file, though you can change that
-//                self.storageRef.child(filePath).dataWithMaxSize(10*1024*1024, completion: { (data, error) in
-//                    
-//                    let userPhoto = UIImage(data: data!)
-//                    self.userPhoto.image = userPhoto
-//                })
-//            }
-//        })
-//        
-//    }
+            }
+        })
+    }
     
-
+    func downloadPhotos() {
+        
+        
+        for url in downloadLinks {
+            let storageRef = Storage.storage().reference(forURL: url)
+            storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
+                let pic = UIImage(data: data!)
+                self.photoArray.append(pic!)
+            }
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        getPhotoURLS()
+        downloadPhotos()
     }
 }
 
