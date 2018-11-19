@@ -24,8 +24,6 @@ class AddAPlantController: UIViewController, UIImagePickerControllerDelegate, UI
     
     @IBOutlet weak var datePurchased: UITextField!
     
-    @IBOutlet weak var dateLastWatered: UITextField!
-    
     @IBOutlet weak var lightNeeds: UITextField!
    
     @IBOutlet weak var waterNeeds: UITextField!
@@ -77,7 +75,7 @@ class AddAPlantController: UIViewController, UIImagePickerControllerDelegate, UI
                 } else{
                     let downloadURL = metaData!.downloadURL()!.absoluteString
                     self.databaseRef?.child("users").child(Auth.auth().currentUser!.uid).updateChildValues(["usersPhotos": downloadURL,
-                        "nickName": self.nickName.text!, "commonName": self.commonName.text!, "species": self.species.text!, "genus": self.genus.text!, "datePurchased":self.datePurchased.text!, "dateLastWatered": self.dateLastWatered.text!,
+                        "nickName": self.nickName.text!, "commonName": self.commonName.text!, "species": self.species.text!, "genus": self.genus.text!, "datePurchased":self.datePurchased.text!,
                         "lightNeeds": self.lightNeeds.text!, "waterNeeds": self.waterNeeds.text!, "fertilizeNeeds": self.fertilizeNeeds.text!])
             }
         }
@@ -86,6 +84,7 @@ class AddAPlantController: UIViewController, UIImagePickerControllerDelegate, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         picker.delegate = self
+        self.savePlant.layer.cornerRadius = 15
     }
     
 }

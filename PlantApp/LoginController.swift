@@ -20,6 +20,10 @@ class LoginController: UIViewController {
     
     @IBOutlet var loginLabel: UILabel!
     
+    @IBOutlet weak var login: UIButton!
+    
+    @IBOutlet weak var register: UIButton!
+    
     @IBAction func logIn(_ sender: Any) {
         if let email = self.email.text, let password = self.password.text {
             
@@ -48,6 +52,8 @@ class LoginController: UIViewController {
     
 override func viewDidLoad() {
     super.viewDidLoad()
+    self.login.layer.cornerRadius = 15
+    self.register.layer.cornerRadius = 15
     }
 
 }
