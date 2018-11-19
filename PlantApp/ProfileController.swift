@@ -35,6 +35,10 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
         performSegue(withIdentifier: "CollectionViewSegue", sender: self)
     }
     
+    @IBAction func goToCalendar(_ sender: Any) {
+        performSegue(withIdentifier: "CalendarSegue", sender: self)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return downloadLinks.count;
     }
