@@ -187,6 +187,7 @@
                     <connections>
                         <outlet property="TableView" destination="Vc8-O0-e92" id="sCL-cK-37U"/>
                         <segue destination="6eg-yc-Ue1" kind="show" identifier="AddAPlantSegue" id="H4e-5G-zRG"/>
+                        <segue destination="Jp6-Af-t2r" kind="show" identifier="CollectionViewSegue" id="WEJ-uM-5Zx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Yk-Q1-PoZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -196,7 +197,7 @@
         <!--CollectionViewController-->
         <scene sceneID="Qf4-7J-mz7">
             <objects>
-                <viewController title="CollectionViewController" id="Jp6-Af-t2r" sceneMemberID="viewController">
+                <viewController title="CollectionViewController" id="Jp6-Af-t2r" customClass="CollectionViewController" customModule="PlantApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8Y6-9U-llL"/>
                         <viewControllerLayoutGuide type="bottom" id="V3O-AU-VZB"/>
