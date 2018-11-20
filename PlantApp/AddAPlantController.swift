@@ -36,7 +36,7 @@ class AddAPlantController: UIViewController, UIImagePickerControllerDelegate, UI
     
     @IBOutlet var addAPhoto: UIButton!
     
-    var chosenImage : UIImage!
+    @IBOutlet weak var chosenImage: UIImageView!
     
     let storageRef = Storage.storage().reference()
     
@@ -46,10 +46,10 @@ class AddAPlantController: UIViewController, UIImagePickerControllerDelegate, UI
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
-            self.previewImage.image = image
+            previewImage.image = image
             addAPhoto.isHidden = true
             savePlant.isHidden = false
-            chosenImage = image
+            chosenImage.image = image
             
         }
         self.dismiss(animated: true, completion: nil)
@@ -63,8 +63,8 @@ class AddAPlantController: UIViewController, UIImagePickerControllerDelegate, UI
     }
     
     @IBAction func postPlant(_ sender: Any) {
-            var data = NSData()
-            data = UIImageJPEGRepresentation(chosenImage, 0.8)! as NSData
+            var data = Data()
+            data = UIImageJPEGRepresentation(chosenImage.image!, 0.8)! as Data
             let filePath = "\(Auth.auth().currentUser!.uid)/\("usersPhotos")"
             let metaData = StorageMetadata()
             metaData.contentType = "image/jpg"

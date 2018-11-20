@@ -110,6 +110,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vc8-O0-e92">
                                 <rect key="frame" x="0.0" y="130" width="375" height="537"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" red="0.10196078431372549" green="0.40392156862745099" blue="0.34509803921568627" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="251" id="LSt-f8-kCJ" customClass="ProfileControllerTableViewCell" customModule="PlantApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="251"/>
@@ -280,9 +281,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="erS-EN-AOs">
-                                <rect key="frame" x="97" y="75" width="194" height="167"/>
-                            </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nickname" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B1f-4C-7YZ">
                                 <rect key="frame" x="77" y="296" width="235" height="30"/>
                                 <nil key="textColor"/>
@@ -319,7 +317,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Water Needs" textAlignment="natural" minimumFontSize="17" background="Fertilizer Needs" translatesAutoresizingMaskIntoConstraints="NO" id="O4M-JK-93G">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Water Needs" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O4M-JK-93G">
                                 <rect key="frame" x="77" y="524" width="235" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -351,18 +349,22 @@
                                     <action selector="selectPhoto:" destination="6eg-yc-Ue1" eventType="touchUpInside" id="hu1-lT-IQm"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cpQ-01-5Et">
+                                <rect key="frame" x="86" y="84" width="206" height="145"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.25940811634063721" green="0.672474205493927" blue="0.51441943645477295" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="erS-EN-AOs" secondAttribute="trailing" constant="68" id="0xb-EE-wlh"/>
-                            <constraint firstItem="Ilg-vg-q7A" firstAttribute="top" secondItem="erS-EN-AOs" secondAttribute="bottom" constant="8" id="4dK-lI-kmh"/>
                             <constraint firstItem="QzZ-zs-7rS" firstAttribute="top" secondItem="66d-ZV-Aeu" secondAttribute="bottom" constant="8" id="4rf-R9-Fg4"/>
                             <constraint firstItem="66d-ZV-Aeu" firstAttribute="top" secondItem="9Ji-pq-PgV" secondAttribute="bottom" constant="8" id="5CY-S9-V9o"/>
                             <constraint firstItem="B1f-4C-7YZ" firstAttribute="leading" secondItem="DQz-wI-eSt" secondAttribute="leadingMargin" constant="61" id="6Ca-W4-MYe"/>
                             <constraint firstItem="Ejh-4E-H27" firstAttribute="top" secondItem="O4M-JK-93G" secondAttribute="bottom" constant="8" id="7Y4-fw-6lM"/>
+                            <constraint firstItem="Ilg-vg-q7A" firstAttribute="top" secondItem="cpQ-01-5Et" secondAttribute="bottom" constant="21" id="9BN-e9-gC7"/>
                             <constraint firstItem="QzZ-zs-7rS" firstAttribute="leading" secondItem="DQz-wI-eSt" secondAttribute="leadingMargin" constant="61" id="Ag3-jf-OCO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cpQ-01-5Et" secondAttribute="trailing" constant="67" id="DM2-le-KhG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="c7w-ca-R1u" secondAttribute="trailing" constant="47" id="Ezd-aX-8AW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="erd-5O-jxP" secondAttribute="trailing" constant="47" id="FKR-Vn-CC3"/>
+                            <constraint firstItem="cpQ-01-5Et" firstAttribute="top" secondItem="wpd-hb-eBo" secondAttribute="bottom" constant="20" id="IIL-9e-g4P"/>
                             <constraint firstItem="Ejh-4E-H27" firstAttribute="leading" secondItem="DQz-wI-eSt" secondAttribute="leadingMargin" constant="61" id="JXS-Jr-6fZ"/>
                             <constraint firstItem="B1f-4C-7YZ" firstAttribute="top" secondItem="Ilg-vg-q7A" secondAttribute="bottom" constant="15" id="N1h-jM-qUj"/>
                             <constraint firstItem="Ejh-4E-H27" firstAttribute="top" secondItem="O4M-JK-93G" secondAttribute="bottom" constant="8" id="NM0-Zz-lM6"/>
@@ -375,7 +377,6 @@
                             <constraint firstItem="dL5-1x-b7c" firstAttribute="top" secondItem="B1f-4C-7YZ" secondAttribute="bottom" constant="8" id="QvL-q3-mKZ"/>
                             <constraint firstItem="c7w-ca-R1u" firstAttribute="top" secondItem="QzZ-zs-7rS" secondAttribute="bottom" constant="8" id="Rna-41-26B"/>
                             <constraint firstAttribute="trailingMargin" secondItem="B1f-4C-7YZ" secondAttribute="trailing" constant="47" id="S09-yV-K5a"/>
-                            <constraint firstItem="Ilg-vg-q7A" firstAttribute="top" secondItem="erS-EN-AOs" secondAttribute="bottom" constant="8" id="UEg-Hv-uGY"/>
                             <constraint firstItem="9Ji-pq-PgV" firstAttribute="top" secondItem="dL5-1x-b7c" secondAttribute="bottom" constant="8" id="Vhz-ZJ-Cdp"/>
                             <constraint firstItem="erd-5O-jxP" firstAttribute="top" secondItem="Ejh-4E-H27" secondAttribute="bottom" constant="14" id="VyV-MN-fHj"/>
                             <constraint firstItem="O4M-JK-93G" firstAttribute="top" secondItem="c7w-ca-R1u" secondAttribute="bottom" constant="8" id="Wiz-Le-giG"/>
@@ -387,28 +388,28 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Ilg-vg-q7A" secondAttribute="trailing" constant="109" id="fHH-am-YTU"/>
                             <constraint firstItem="erd-5O-jxP" firstAttribute="leading" secondItem="DQz-wI-eSt" secondAttribute="leadingMargin" constant="61" id="hfu-ia-2k5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9Ji-pq-PgV" secondAttribute="trailing" constant="47" id="k5s-rc-waY"/>
-                            <constraint firstItem="erS-EN-AOs" firstAttribute="top" secondItem="wpd-hb-eBo" secondAttribute="bottom" constant="11" id="lFl-4a-GAf"/>
                             <constraint firstItem="66d-ZV-Aeu" firstAttribute="top" secondItem="9Ji-pq-PgV" secondAttribute="bottom" constant="8" id="m4C-QI-90p"/>
                             <constraint firstItem="O4M-JK-93G" firstAttribute="leading" secondItem="DQz-wI-eSt" secondAttribute="leadingMargin" constant="61" id="nYw-nX-2cw"/>
                             <constraint firstItem="erd-5O-jxP" firstAttribute="top" secondItem="Ejh-4E-H27" secondAttribute="bottom" constant="14" id="oFR-kO-1Xu"/>
                             <constraint firstItem="dL5-1x-b7c" firstAttribute="leading" secondItem="DQz-wI-eSt" secondAttribute="leadingMargin" constant="61" id="qlZ-ce-HlA"/>
                             <constraint firstItem="AlS-G9-b7J" firstAttribute="top" secondItem="erd-5O-jxP" secondAttribute="bottom" constant="31" id="rS4-7h-3kZ"/>
+                            <constraint firstItem="cpQ-01-5Et" firstAttribute="leading" secondItem="DQz-wI-eSt" secondAttribute="leadingMargin" constant="70" id="uyA-fb-YjM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QzZ-zs-7rS" secondAttribute="trailing" constant="47" id="v9H-v6-Kar"/>
                             <constraint firstItem="9Ji-pq-PgV" firstAttribute="leading" secondItem="DQz-wI-eSt" secondAttribute="leadingMargin" constant="61" id="xac-Dq-3Wv"/>
                             <constraint firstItem="QzZ-zs-7rS" firstAttribute="top" secondItem="66d-ZV-Aeu" secondAttribute="bottom" constant="8" id="ye7-Zi-LFe"/>
-                            <constraint firstItem="erS-EN-AOs" firstAttribute="leading" secondItem="DQz-wI-eSt" secondAttribute="leadingMargin" constant="81" id="z11-a9-bpH"/>
                             <constraint firstItem="9Ji-pq-PgV" firstAttribute="top" secondItem="dL5-1x-b7c" secondAttribute="bottom" constant="8" id="zIg-AB-sf7"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="addAPhoto" destination="Ilg-vg-q7A" id="XRo-5o-9HS"/>
+                        <outlet property="chosenImage" destination="cpQ-01-5Et" id="vtN-ed-MDM"/>
                         <outlet property="commonName" destination="DQz-wI-eSt" id="hhi-cx-600"/>
                         <outlet property="datePurchased" destination="QzZ-zs-7rS" id="ReC-8C-BRo"/>
-                        <outlet property="fertilizeNeeds" destination="Ejh-4E-H27" id="Dl0-k9-3p0"/>
+                        <outlet property="fertilizeNeeds" destination="Ejh-4E-H27" id="EQr-TZ-oUA"/>
                         <outlet property="genus" destination="66d-ZV-Aeu" id="Kgq-Bi-pE5"/>
                         <outlet property="lightNeeds" destination="c7w-ca-R1u" id="8H2-H8-XIS"/>
                         <outlet property="nickName" destination="B1f-4C-7YZ" id="RnQ-AS-Pve"/>
-                        <outlet property="previewImage" destination="erS-EN-AOs" id="HNR-tb-oDc"/>
+                        <outlet property="previewImage" destination="cpQ-01-5Et" id="Qmi-KQ-FPb"/>
                         <outlet property="savePlant" destination="erd-5O-jxP" id="XAV-fd-OH4"/>
                         <outlet property="species" destination="9Ji-pq-PgV" id="gJ0-W6-cfe"/>
                         <outlet property="waterNeeds" destination="O4M-JK-93G" id="KYC-QX-Ydd"/>
@@ -599,7 +600,4 @@
             <point key="canvasLocation" x="-735" y="3"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Fertilizer Needs" width="16" height="16"/>
-    </resources>
 </document>
