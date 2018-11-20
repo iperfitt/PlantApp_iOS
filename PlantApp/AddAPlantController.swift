@@ -85,6 +85,7 @@ class AddAPlantController: UIViewController, UIImagePickerControllerDelegate, UI
         super.viewDidLoad()
         picker.delegate = self
         self.savePlant.layer.cornerRadius = 15
+        self.addAPhoto.layer.cornerRadius = 15
     }
     
 }
