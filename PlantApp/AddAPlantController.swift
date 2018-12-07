@@ -43,6 +43,8 @@ class AddAPlantController: UIViewController, UIImagePickerControllerDelegate, UI
     let databaseRef = Database.database().reference() as DatabaseReference!
     
     let picker = UIImagePickerController()
+    
+    let filePath = "/users/usersPhotos"
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
@@ -64,8 +66,7 @@ class AddAPlantController: UIViewController, UIImagePickerControllerDelegate, UI
     
     @IBAction func postPlant(_ sender: Any) {
             var data = Data()
-            data = UIImageJPEGRepresentation(chosenImage.image!, 0.8)! as Data
-            let filePath = "\(Auth.auth().currentUser!.uid)/\("usersPhotos")"
+            data = UIImageJPEGRepresentation(chosenImage.image!, 0.8)!
             let metaData = StorageMetadata()
             metaData.contentType = "image/jpg"
             self.storageRef.child(filePath).putData(data as Data, metadata: metaData){(metaData,error) in
