@@ -49,7 +49,7 @@ class AddAPlantController: UIViewController, UIImagePickerControllerDelegate, UI
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
             previewImage.image = image
-            addAPhoto.isHidden = true
+            addAPhoto.setTitle("Change Photo", for: .normal)
             savePlant.isHidden = false
             chosenImage.image = image
             
