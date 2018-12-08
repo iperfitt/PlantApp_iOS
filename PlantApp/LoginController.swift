@@ -50,10 +50,23 @@ class LoginController: UIViewController {
         }
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    email.resignFirstResponder()
+    password.resignFirstResponder()
+    return(true)
+    }
+    
 override func viewDidLoad() {
     super.viewDidLoad()
+    self.email.delegate = self as? UITextFieldDelegate
+    self.password.delegate = self as? UITextFieldDelegate
     self.login.layer.cornerRadius = 15
     self.register.layer.cornerRadius = 15
+    
     }
 
 }

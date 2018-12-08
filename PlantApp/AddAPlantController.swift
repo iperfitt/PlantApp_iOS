@@ -82,9 +82,33 @@ class AddAPlantController: UIViewController, UIImagePickerControllerDelegate, UI
         }
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        nickName.resignFirstResponder()
+        commonName.resignFirstResponder()
+        species.resignFirstResponder()
+        genus.resignFirstResponder()
+        datePurchased.resignFirstResponder()
+        lightNeeds.resignFirstResponder()
+        waterNeeds.resignFirstResponder()
+        fertilizeNeeds.resignFirstResponder()
+        return(true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         picker.delegate = self
+        self.nickName.delegate = self as? UITextFieldDelegate
+        self.commonName.delegate = self as? UITextFieldDelegate
+        self.species.delegate = self as? UITextFieldDelegate
+        self.genus.delegate = self as? UITextFieldDelegate
+        self.datePurchased.delegate = self as? UITextFieldDelegate
+        self.lightNeeds.delegate = self as? UITextFieldDelegate
+        self.waterNeeds.delegate = self as? UITextFieldDelegate
+        self.fertilizeNeeds.delegate = self as? UITextFieldDelegate
         self.savePlant.layer.cornerRadius = 15
         self.addAPhoto.layer.cornerRadius = 15
     }
