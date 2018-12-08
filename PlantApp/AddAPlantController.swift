@@ -98,9 +98,7 @@ class AddAPlantController: UIViewController, UIImagePickerControllerDelegate, UI
         return(true)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        picker.delegate = self
+    func setDelegates() {
         self.nickName.delegate = self as? UITextFieldDelegate
         self.commonName.delegate = self as? UITextFieldDelegate
         self.species.delegate = self as? UITextFieldDelegate
@@ -109,6 +107,12 @@ class AddAPlantController: UIViewController, UIImagePickerControllerDelegate, UI
         self.lightNeeds.delegate = self as? UITextFieldDelegate
         self.waterNeeds.delegate = self as? UITextFieldDelegate
         self.fertilizeNeeds.delegate = self as? UITextFieldDelegate
+        picker.delegate = self
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setDelegates()
         self.savePlant.layer.cornerRadius = 15
         self.addAPhoto.layer.cornerRadius = 15
     }
