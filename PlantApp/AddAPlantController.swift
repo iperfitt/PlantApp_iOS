@@ -44,7 +44,7 @@ class AddAPlantController: UIViewController, UIImagePickerControllerDelegate, UI
     
     let picker = UIImagePickerController()
     
-    let filePath = "/users/usersPhotos"
+    let filePath = "photos"
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
@@ -75,6 +75,8 @@ class AddAPlantController: UIViewController, UIImagePickerControllerDelegate, UI
                     return
                 } else{
                     let downloadURL = metaData!.downloadURL()!.absoluteString
+                    print("like omgggghghghghghghg")
+                    print(downloadURL)
                     self.databaseRef?.child("users").child(Auth.auth().currentUser!.uid).updateChildValues(["usersPhotos": downloadURL,
                         "nickName": self.nickName.text!, "commonName": self.commonName.text!, "species": self.species.text!, "genus": self.genus.text!, "datePurchased":self.datePurchased.text!,
                         "lightNeeds": self.lightNeeds.text!, "waterNeeds": self.waterNeeds.text!, "fertilizeNeeds": self.fertilizeNeeds.text!])
@@ -99,7 +101,7 @@ class AddAPlantController: UIViewController, UIImagePickerControllerDelegate, UI
     }
     
     func setDelegates() {
-        self.nickName.delegate = self as? UITextFieldDelegate
+       self.nickName.delegate = self as? UITextFieldDelegate
         self.commonName.delegate = self as? UITextFieldDelegate
         self.species.delegate = self as? UITextFieldDelegate
         self.genus.delegate = self as? UITextFieldDelegate
