@@ -44,9 +44,9 @@ class AddAPlantController: UIViewController, UIImagePickerControllerDelegate, UI
     
     let picker = UIImagePickerController()
     
-    let filePath = "userPhotos"
-    
     let uid = ""
+    
+    let userID = Auth.auth().currentUser!.uid
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
@@ -74,12 +74,12 @@ class AddAPlantController: UIViewController, UIImagePickerControllerDelegate, UI
             let metaData = StorageMetadata()
             data = UIImageJPEGRepresentation(chosenImage.image!, 0.8)!
             metaData.contentType = "image/jpg"
-            self.storageRef.child(Auth.auth().currentUser?.uid as! String).child(filePath + tString).putData(data as Data, metadata: metaData){(metaData,error) in
+            self.storageRef.child(Auth.auth().currentUser?.uid as! String).child(tString).putData(data as Data, metadata: metaData){(metaData,error) in
                 if let error = error {
                     return
                 } else{
                     let downloadURL = metaData!.downloadURL()!.absoluteString
-                    self.databaseRef?.child("users").child(Auth.auth().currentUser!.uid).updateChildValues([tString.replacingOccurrences(of: ".", with: "-", options: .literal, range: nil): downloadURL,
+                    self.databaseRef?.child("Users").child(self.userID).child("Plants").child(tString.replacingOccurrences(of: ".", with: "-", options: .literal, range: nil)).updateChildValues(["downloadURL": downloadURL,
                         "nickName": self.nickName.text!, "commonName": self.commonName.text!, "species": self.species.text!, "genus": self.genus.text!, "datePurchased":self.datePurchased.text!,
                         "lightNeeds": self.lightNeeds.text!, "waterNeeds": self.waterNeeds.text!, "fertilizerNeeds": self.fertilizerNeeds.text!])
             }

@@ -19,8 +19,6 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     let userID = Auth.auth().currentUser!.uid
     
-    var downloadLink : String!
-    
     var downloadLinks = [String]()
     
     var photoArray = [UIImage]()
@@ -49,38 +47,39 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         //cell.nickname =
         //cell.lastWaterDate =
-        cell.plantImage.image = photoArray[index]
+        print("nono")
+        print(self.photoArray)
+        cell.plantImage.image = self.photoArray[index]
         index += 1
         
         return cell
     }
     
     func getPhotoURLS() {
-        databaseRef?.child("users").child(userID).child("usersPhotos").observeSingleEvent(of: .value, with: { (snapshot) in
-            //initialize photo download array
-            for photoURL in snapshot.children.allObjects as! [String] {
-                self.downloadLinks.append(photoURL)
-                
+        databaseRef?.child("Users").child(userID).child("Plants").observeSingleEvent(of: .value, with: { (snapshot) in
+            //get links
+            var snapDict = [String : AnyObject]()
+                for child in snapshot.children.allObjects as! [DataSnapshot]  {
+                    snapDict = child.value as? [String : AnyObject] ?? [:]
+                    self.downloadLinks.append(snapDict["downloadURL"]! as! String)
+            }
+            //downloadphotos
+            for url in self.downloadLinks {
+                let storageRef = Storage.storage().reference(forURL: url)
+                storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
+                    let pic = UIImage(data: data!)
+                    self.photoArray.append(pic!)
+                }
             }
         })
-    }
+       }
     
-    func downloadPhotos() {
-        
-        
-        for url in downloadLinks {
-            let storageRef = Storage.storage().reference(forURL: url)
-            storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
-                let pic = UIImage(data: data!)
-                self.photoArray.append(pic!)
-            }
-        }
-    }
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
         getPhotoURLS()
-        downloadPhotos()
+        
     }
 }
 
