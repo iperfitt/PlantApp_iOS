@@ -28,7 +28,7 @@ class AddAPlantController: UIViewController, UIImagePickerControllerDelegate, UI
    
     @IBOutlet weak var waterNeeds: UITextField!
     
-    @IBOutlet weak var fertilizeNeeds: UITextField!
+    @IBOutlet weak var fertilizerNeeds: UITextField!
     
     @IBOutlet var savePlant: UIButton!
     
@@ -44,7 +44,9 @@ class AddAPlantController: UIViewController, UIImagePickerControllerDelegate, UI
     
     let picker = UIImagePickerController()
     
-    let filePath = "photos"
+    let filePath = "userPhotos"
+    
+    let uid = ""
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
@@ -66,20 +68,20 @@ class AddAPlantController: UIViewController, UIImagePickerControllerDelegate, UI
     
     @IBAction func postPlant(_ sender: Any) {
             var data = Data()
-            data = UIImageJPEGRepresentation(chosenImage.image!, 0.8)!
+            let tDouble = Date()
+            //convert time since reference date into a string
+            let tString = String(format:"%.1f", tDouble.timeIntervalSinceReferenceDate as CVarArg)
             let metaData = StorageMetadata()
+            data = UIImageJPEGRepresentation(chosenImage.image!, 0.8)!
             metaData.contentType = "image/jpg"
-            self.storageRef.child(filePath).putData(data as Data, metadata: metaData){(metaData,error) in
+            self.storageRef.child(Auth.auth().currentUser?.uid as! String).child(filePath + tString).putData(data as Data, metadata: metaData){(metaData,error) in
                 if let error = error {
-                    print(error.localizedDescription)
                     return
                 } else{
                     let downloadURL = metaData!.downloadURL()!.absoluteString
-                    print("like omgggghghghghghghg")
-                    print(downloadURL)
-                    self.databaseRef?.child("users").child(Auth.auth().currentUser!.uid).updateChildValues(["usersPhotos": downloadURL,
+                    self.databaseRef?.child("users").child(Auth.auth().currentUser!.uid).updateChildValues([tString.replacingOccurrences(of: ".", with: "-", options: .literal, range: nil): downloadURL,
                         "nickName": self.nickName.text!, "commonName": self.commonName.text!, "species": self.species.text!, "genus": self.genus.text!, "datePurchased":self.datePurchased.text!,
-                        "lightNeeds": self.lightNeeds.text!, "waterNeeds": self.waterNeeds.text!, "fertilizeNeeds": self.fertilizeNeeds.text!])
+                        "lightNeeds": self.lightNeeds.text!, "waterNeeds": self.waterNeeds.text!, "fertilizerNeeds": self.fertilizerNeeds.text!])
             }
         }
     }
@@ -96,7 +98,7 @@ class AddAPlantController: UIViewController, UIImagePickerControllerDelegate, UI
         datePurchased.resignFirstResponder()
         lightNeeds.resignFirstResponder()
         waterNeeds.resignFirstResponder()
-        fertilizeNeeds.resignFirstResponder()
+        fertilizerNeeds.resignFirstResponder()
         return(true)
     }
     
@@ -108,7 +110,7 @@ class AddAPlantController: UIViewController, UIImagePickerControllerDelegate, UI
         self.datePurchased.delegate = self as? UITextFieldDelegate
         self.lightNeeds.delegate = self as? UITextFieldDelegate
         self.waterNeeds.delegate = self as? UITextFieldDelegate
-        self.fertilizeNeeds.delegate = self as? UITextFieldDelegate
+        self.fertilizerNeeds.delegate = self as? UITextFieldDelegate
         picker.delegate = self
     }
     

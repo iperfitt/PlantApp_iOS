@@ -403,7 +403,7 @@
                         <outlet property="chosenImage" destination="cpQ-01-5Et" id="vtN-ed-MDM"/>
                         <outlet property="commonName" destination="dL5-1x-b7c" id="RtC-f4-wgy"/>
                         <outlet property="datePurchased" destination="QzZ-zs-7rS" id="ReC-8C-BRo"/>
-                        <outlet property="fertilizeNeeds" destination="Ejh-4E-H27" id="EQr-TZ-oUA"/>
+                        <outlet property="fertilizerNeeds" destination="Ejh-4E-H27" id="fck-6N-jm5"/>
                         <outlet property="genus" destination="66d-ZV-Aeu" id="Kgq-Bi-pE5"/>
                         <outlet property="lightNeeds" destination="c7w-ca-R1u" id="8H2-H8-XIS"/>
                         <outlet property="nickName" destination="B1f-4C-7YZ" id="RnQ-AS-Pve"/>
@@ -519,7 +519,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="CustomCell" id="7gC-qo-8wk" customClass="CustomCell" customModule="PlantApp" customModuleProvider="target">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CustomCell" id="7gC-qo-8wk" customClass="CustomCell" customModule="PlantApp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="152" height="160"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
