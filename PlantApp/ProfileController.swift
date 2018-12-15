@@ -19,9 +19,7 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     let userID = Auth.auth().currentUser!.uid
     
-    var downloadLinks = [String]()
-    
-    var photoArray = [UIImage]()
+    var photos = [Photo]()
     
     var index  = 0
     
@@ -38,47 +36,59 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return downloadLinks.count;
+        return photos.count;
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProfileControllerTableViewCell
+        
+        //////youtube
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let photo = photos[indexPath.row]
+        cell.textLabel?.text = photo.nickname
         
         
-        //cell.nickname =
-        //cell.lastWaterDate =
-        print("nono")
-        print(self.photoArray)
-        cell.plantImage.image = self.photoArray[index]
-        index += 1
+        cell.imageView?.image = UIImage(named: "Plant")
+        
+        if let profileImageUrl = photo.profileImageUrl {
+            let url = NSURL(string: profileImageUrl)
+            URLSession.sharedSession().dataTaskWithURL(url: NSURL, completionHandler: {(data,  response, error) in
+                
+                if error != nil {
+                    print(error)
+                    return
+                }
+                dispatch_async(dispatch_get_main_queue(), {
+                cell.imageView?.image = UIImage(data: data!)
+                    })
+            }).resume()
+        }
         
         return cell
     }
     
-    func getPhotoURLS() {
-        databaseRef?.child("Users").child(userID).child("Plants").observeSingleEvent(of: .value, with: { (snapshot) in
-            //get links
-            var snapDict = [String : AnyObject]()
-                for child in snapshot.children.allObjects as! [DataSnapshot]  {
-                    snapDict = child.value as? [String : AnyObject] ?? [:]
-                    self.downloadLinks.append(snapDict["downloadURL"]! as! String)
+    func getPhotos() {
+        databaseRef?.child("Users").child((Auth.auth().currentUser?.uid)!).observe(.childAdded, with: { (snapshot) in
+            if let dictionary = snapshot.value as? [String: AnyObject] {
+                let photo = Photo()
+                
+                photo.setValuesForKeys(dictionary)
+                self.photos.append(photo)
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                })
+                
             }
-            //downloadphotos
-            for url in self.downloadLinks {
-                let storageRef = Storage.storage().reference(forURL: url)
-                storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
-                    let pic = UIImage(data: data!)
-                    self.photoArray.append(pic!)
-                }
-            }
-        })
+        }, withCancel: nil)
+        
        }
     
    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getPhotoURLS()
+        getPhotos()
         
     }
 }
