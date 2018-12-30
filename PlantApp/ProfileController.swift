@@ -10,10 +10,11 @@ import UIKit
 import FirebaseDatabase
 import FirebaseAuth
 import FirebaseStorage
+import SwiftyJSON
 
 class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet var TableView: UITableView!
+    @IBOutlet var tableView: UITableView!
     
     let databaseRef = Database.database().reference() as DatabaseReference!
     
@@ -22,6 +23,8 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
     var photos = [Photo]()
     
     var index  = 0
+    
+    var imageDownloadURL : String?
     
     @IBAction func addAPlant(_ sender: Any) {
         performSegue(withIdentifier: "AddAPlantSegue", sender: self)
@@ -35,60 +38,68 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
         performSegue(withIdentifier: "CalendarSegue", sender: self)
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return photos.count;
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        //////youtube
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        let photo = photos[indexPath.row]
-        cell.textLabel?.text = photo.nickname
-        
-        
-        cell.imageView?.image = UIImage(named: "Plant")
-        
-        if let profileImageUrl = photo.profileImageUrl {
-            let url = NSURL(string: profileImageUrl)
-            URLSession.sharedSession().dataTaskWithURL(url: NSURL, completionHandler: {(data,  response, error) in
-                
-                if error != nil {
-                    print(error)
-                    return
-                }
-                dispatch_async(dispatch_get_main_queue(), {
-                cell.imageView?.image = UIImage(data: data!)
-                    })
-            }).resume()
-        }
-        
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return photos.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell", for: indexPath) as! ProfileControllerTableViewCell
         return cell
     }
     
-    func getPhotos() {
-        databaseRef?.child("Users").child((Auth.auth().currentUser?.uid)!).observe(.childAdded, with: { (snapshot) in
-            if let dictionary = snapshot.value as? [String: AnyObject] {
-                let photo = Photo()
-                
-                photo.setValuesForKeys(dictionary)
-                self.photos.append(photo)
-                
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                })
-                
-            }
-        }, withCancel: nil)
+    func downloadPhotos(snapshot: DataSnapshot) {
         
-       }
+        let json =  JSON(snapshot.value!)
+    
+        if case self.imageDownloadURL = json["downloadURL"].stringValue {
+                
+                let imageStorageRef = Storage.storage().reference(forURL: imageDownloadURL!)
+                
+                imageStorageRef.getData(maxSize: 2 * 1024 * 1024, completion: { (data, error) in
+                    if let error = error {
+                        print(")))))))) ERROR DOWNLOADING IMAGE: \(error)")
+                    }
+                    else {
+                    
+                    if let imageData = data {
+                        DispatchQueue.main.async {
+                            let image = UIImage(data: imageData)
+                            photo.image = image
+                            
+                        }
+                    }
+                }
+            })
+        }
+    }
     
    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getPhotos()
+        
+        Database.database().reference().child("Users").child((Auth.auth().currentUser?.uid)!).child("Plants") .observe(.childAdded, with: { (snapshot) in
+            
+            self.downloadPhotos(snapshot: snapshot)
+            
+            DispatchQueue.main.sync {
+                
+                self.tableView.reloadData()
+                
+            }
+            
+            
+            
+            
+            
+        })
+        
         
     }
 }

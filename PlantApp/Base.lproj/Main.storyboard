@@ -110,7 +110,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" red="0.10196078431372549" green="0.40392156862745099" blue="0.34509803921568627" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="251" id="LSt-f8-kCJ" customClass="ProfileControllerTableViewCell" customModule="PlantApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="251" id="LSt-f8-kCJ" customClass="ProfileControllerTableViewCell">
                                         <rect key="frame" x="0.0" y="28" width="375" height="251"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LSt-f8-kCJ" id="l0g-w5-vht">
@@ -139,7 +139,9 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="lastWaterDate" destination="QZd-na-XTL" id="50R-uB-ADq"/>
-                                            <outlet property="nickname" destination="e4v-fZ-JVh" id="Qaj-wq-OrU"/>
+                                            <outlet property="lastWatered" destination="QZd-na-XTL" id="qDJ-cT-inf"/>
+                                            <outlet property="nickname" destination="e4v-fZ-JVh" id="Aap-Q1-Twc"/>
+                                            <outlet property="photo" destination="lEn-fw-Zin" id="2k6-i1-Px4"/>
                                             <outlet property="plantImage" destination="lEn-fw-Zin" id="uoN-DK-i3P"/>
                                         </connections>
                                     </tableViewCell>

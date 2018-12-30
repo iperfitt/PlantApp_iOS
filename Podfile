@@ -8,6 +8,7 @@ target 'PlantApp' do
     pod 'Firebase/Auth'
     pod 'Firebase/Storage'
     pod 'Firebase/Database'
+    pod 'SwiftyJSON'
 end
 
 post_install do |installer|
