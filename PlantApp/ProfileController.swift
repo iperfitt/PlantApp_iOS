@@ -22,8 +22,6 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     var photos = [Photo]()
     
-    var index  = 0
-    
     var imageDownloadURL : String?
     
     @IBAction func addAPlant(_ sender: Any) {
@@ -55,28 +53,28 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     func downloadPhotos(snapshot: DataSnapshot) {
         
-        let json =  JSON(snapshot.value!)
-    
-        if case self.imageDownloadURL = json["downloadURL"].stringValue {
-                
-                let imageStorageRef = Storage.storage().reference(forURL: imageDownloadURL!)
-                
-                imageStorageRef.getData(maxSize: 2 * 1024 * 1024, completion: { (data, error) in
-                    if let error = error {
-                        print(")))))))) ERROR DOWNLOADING IMAGE: \(error)")
-                    }
-                    else {
-                    
-                    if let imageData = data {
-                        DispatchQueue.main.async {
-                            let image = UIImage(data: imageData)
-                            photo.image = image
-                            
-                        }
-                    }
-                }
-            })
-        }
+//        let json =  JSON(snapshot.value!)
+//
+//        if case self.imageDownloadURL = json["downloadURL"].stringValue {
+//
+//                let imageStorageRef = Storage.storage().reference(forURL: imageDownloadURL!)
+//
+//                imageStorageRef.getData(maxSize: 2 * 1024 * 1024, completion: { (data, error) in
+//                    if let error = error {
+//                        print(")))))))) ERROR DOWNLOADING IMAGE: \(error)")
+//                    }
+//                    else {
+//
+//                    if let imageData = data {
+//                        DispatchQueue.main.async {
+//                            let image = UIImage(data: imageData)
+//                            photo.image = image
+//
+//                        }
+//                    }
+//                }
+//            })
+//        }
     }
     
    
@@ -84,20 +82,21 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Database.database().reference().child("Users").child((Auth.auth().currentUser?.uid)!).child("Plants") .observe(.childAdded, with: { (snapshot) in
+        Database.database().reference().child("Users").child((Auth.auth().currentUser?.uid)!).observe(.childAdded, with: { (snapshot) in
             
-            self.downloadPhotos(snapshot: snapshot)
-            
-            DispatchQueue.main.sync {
+            if let dictionary = snapshot.value as? [String: Any] {
                 
-                self.tableView.reloadData()
+                
+                for i in snapshot.children.allObjects as! [DataSnapshot] {
+                    let dic2 = i.value as! [String: String]
+                    print(dic2["downloadURL"] as! String)
+                    
+                    
+                }
                 
             }
             
-            
-            
-            
-            
+
         })
         
         
