@@ -20,7 +20,9 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     let userID = Auth.auth().currentUser!.uid
     
-    var photos = [Photo]()
+    var photos = [UIImage]()
+    
+    var downloadURLS = [String]()
     
     var imageDownloadURL : String?
     
@@ -36,69 +38,60 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
         performSegue(withIdentifier: "CalendarSegue", sender: self)
     }
     
-
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return photos.count
+        return self.photos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell", for: indexPath) as! ProfileControllerTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProfileControllerTableViewCell
+        cell.photo.image = photos[indexPath.row]
+        print(self.photos)
+        print("hello")
         return cell
     }
-    
-    func downloadPhotos(snapshot: DataSnapshot) {
-        
-//        let json =  JSON(snapshot.value!)
-//
-//        if case self.imageDownloadURL = json["downloadURL"].stringValue {
-//
-//                let imageStorageRef = Storage.storage().reference(forURL: imageDownloadURL!)
-//
-//                imageStorageRef.getData(maxSize: 2 * 1024 * 1024, completion: { (data, error) in
-//                    if let error = error {
-//                        print(")))))))) ERROR DOWNLOADING IMAGE: \(error)")
-//                    }
-//                    else {
-//
-//                    if let imageData = data {
-//                        DispatchQueue.main.async {
-//                            let image = UIImage(data: imageData)
-//                            photo.image = image
-//
-//                        }
-//                    }
-//                }
-//            })
-//        }
-    }
-    
-   
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         Database.database().reference().child("Users").child((Auth.auth().currentUser?.uid)!).observe(.childAdded, with: { (snapshot) in
             
+            
+            
             if let dictionary = snapshot.value as? [String: Any] {
                 
                 
                 for i in snapshot.children.allObjects as! [DataSnapshot] {
                     let dic2 = i.value as! [String: String]
-                    print(dic2["downloadURL"] as! String)
+                    self.downloadURLS.append(dic2["downloadURL"] as! String)
                     
                     
                 }
                 
             }
             
+            for i in self.downloadURLS {
+                let imageStorageRef = Storage.storage().reference(forURL: i)
+                
+                imageStorageRef.getData(maxSize: 2 * 1024 * 1024, completion: {(data, error) in
+                    
+                    if let error = error {
+                        print("ERROR DOWNLOADING IMAGE")
+                    } else {
+                        if let imageData = data {
+                                let image = UIImage(data: imageData)
+                                self.photos.append(image!)
+                                self.tableView.reloadData()
+                        
+                        }
+                    }
+                    
+                })
+            }
 
         })
-        
+    
         
     }
 }
