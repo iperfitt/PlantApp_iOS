@@ -46,8 +46,6 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProfileControllerTableViewCell
         cell.photo.image = photos[indexPath.row]
-        print(self.photos)
-        print("hello")
         return cell
     }
   
