@@ -48,6 +48,19 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = plantPosts[indexPath.row].nickname
+        let imageStorageRef = Storage.storage().reference(forURL: plantPosts[indexPath.row].photoUrl)
+        imageStorageRef.getData(maxSize: 2 * 1024 * 1024, completion: {(data, error) in
+        if let error = error {
+            print("ERROR DOWNLOADING IMAGE")
+            } else {
+            if let imageData = data {
+            let image = UIImage(data: imageData)
+                cell.imageView?.image = image
+                self.tableView.reloadData()
+            
+                }
+            }
+        })
         return cell
     }
     
