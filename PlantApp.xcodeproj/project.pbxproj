@@ -22,7 +22,7 @@
 		A96BD0A01FE9811D0014F9C9 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96BD09F1FE9811D0014F9C9 /* ProfileController.swift */; };
 		A99628BC213241A400A26E04 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A99628BB213241A400A26E04 /* GoogleService-Info.plist */; };
 		A99CFDCE1FEAE671000BE0FF /* AddAPlantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99CFDCD1FEAE671000BE0FF /* AddAPlantController.swift */; };
-		A9B948D521C55DF500F529E5 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B948D421C55DF500F529E5 /* Photo.swift */; };
+		A9B948D521C55DF500F529E5 /* PlantPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B948D421C55DF500F529E5 /* PlantPost.swift */; };
 		A9D289251FE9CCF000D453B6 /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D289241FE9CCF000D453B6 /* CalendarController.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,7 +66,7 @@
 		A96BD09F1FE9811D0014F9C9 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		A99628BB213241A400A26E04 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A99CFDCD1FEAE671000BE0FF /* AddAPlantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAPlantController.swift; sourceTree = "<group>"; };
-		A9B948D421C55DF500F529E5 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		A9B948D421C55DF500F529E5 /* PlantPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantPost.swift; sourceTree = "<group>"; };
 		A9D289241FE9CCF000D453B6 /* CalendarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarController.swift; sourceTree = "<group>"; };
 		EF064C1BC08C19DFCFE7305C /* Pods_PlantApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlantApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -179,7 +179,7 @@
 		A9B948D321C55DDC00F529E5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A9B948D421C55DF500F529E5 /* Photo.swift */,
+				A9B948D421C55DF500F529E5 /* PlantPost.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -390,7 +390,7 @@
 				A96BD09C1FE975E20014F9C9 /* LoginController.swift in Sources */,
 				A96BD06E1FE96F080014F9C9 /* AppDelegate.swift in Sources */,
 				44C01FCF21A22DB100B7855B /* MyCollectionViewCell.swift in Sources */,
-				A9B948D521C55DF500F529E5 /* Photo.swift in Sources */,
+				A9B948D521C55DF500F529E5 /* PlantPost.swift in Sources */,
 				A9D289251FE9CCF000D453B6 /* CalendarController.swift in Sources */,
 				44EE3AFF21A261940040B707 /* CustomCell.swift in Sources */,
 				44C01FD121A22F2A00B7855B /* CollectionViewController.swift in Sources */,

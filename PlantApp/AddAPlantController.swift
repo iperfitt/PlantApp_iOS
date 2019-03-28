@@ -10,6 +10,7 @@ import UIKit
 
 import Firebase
 import FirebaseDatabase
+import FirebaseStorage
 
 
 class AddAPlantController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
