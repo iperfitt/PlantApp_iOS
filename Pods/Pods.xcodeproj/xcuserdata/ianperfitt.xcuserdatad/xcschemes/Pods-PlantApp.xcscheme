@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "14FFCAA16961D9DB371AEB979588F1F8"
+               BlueprintIdentifier = "EC2896E5A0E26F144E915A40CF4F246C"
                BuildableName = "Pods_PlantApp.framework"
                BlueprintName = "Pods-PlantApp"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -26,7 +26,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -37,7 +36,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -47,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "14FFCAA16961D9DB371AEB979588F1F8"
+            BlueprintIdentifier = "EC2896E5A0E26F144E915A40CF4F246C"
             BuildableName = "Pods_PlantApp.framework"
             BlueprintName = "Pods-PlantApp"
             ReferencedContainer = "container:Pods.xcodeproj">

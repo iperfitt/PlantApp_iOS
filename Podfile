@@ -6,6 +6,9 @@ target 'PlantApp' do
     pod 'JTAppleCalendar', '~> 7.0'
     pod 'Firebase/Core'
     pod 'Firebase/Auth'
+    pod 'Firebase/Storage'
+    pod 'Firebase/Database'
+    pod 'SwiftyJSON'
 end
 
 post_install do |installer|
