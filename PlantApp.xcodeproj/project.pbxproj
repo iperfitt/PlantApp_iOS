@@ -20,6 +20,7 @@
 		A96BD08E1FE96F080014F9C9 /* PlantAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96BD08D1FE96F080014F9C9 /* PlantAppUITests.swift */; };
 		A96BD09C1FE975E20014F9C9 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96BD09B1FE975E20014F9C9 /* LoginController.swift */; };
 		A96BD0A01FE9811D0014F9C9 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96BD09F1FE9811D0014F9C9 /* ProfileController.swift */; };
+		A9822246224FD754009D44E3 /* ProfileDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9822245224FD754009D44E3 /* ProfileDetailViewController.swift */; };
 		A99628BC213241A400A26E04 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A99628BB213241A400A26E04 /* GoogleService-Info.plist */; };
 		A99CFDCE1FEAE671000BE0FF /* AddAPlantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99CFDCD1FEAE671000BE0FF /* AddAPlantController.swift */; };
 		A9B948D521C55DF500F529E5 /* PlantPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B948D421C55DF500F529E5 /* PlantPost.swift */; };
@@ -64,6 +65,7 @@
 		A96BD08F1FE96F080014F9C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A96BD09B1FE975E20014F9C9 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		A96BD09F1FE9811D0014F9C9 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		A9822245224FD754009D44E3 /* ProfileDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailViewController.swift; sourceTree = "<group>"; };
 		A99628BB213241A400A26E04 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A99CFDCD1FEAE671000BE0FF /* AddAPlantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAPlantController.swift; sourceTree = "<group>"; };
 		A9B948D421C55DF500F529E5 /* PlantPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantPost.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				44C01FCE21A22DB100B7855B /* MyCollectionViewCell.swift */,
+				A9822245224FD754009D44E3 /* ProfileDetailViewController.swift */,
 				44C01FD021A22F2A00B7855B /* CollectionViewController.swift */,
 				A96BD06D1FE96F080014F9C9 /* AppDelegate.swift */,
 				44EE3AFE21A261940040B707 /* CustomCell.swift */,
@@ -390,6 +393,7 @@
 				A96BD09C1FE975E20014F9C9 /* LoginController.swift in Sources */,
 				A96BD06E1FE96F080014F9C9 /* AppDelegate.swift in Sources */,
 				44C01FCF21A22DB100B7855B /* MyCollectionViewCell.swift in Sources */,
+				A9822246224FD754009D44E3 /* ProfileDetailViewController.swift in Sources */,
 				A9B948D521C55DF500F529E5 /* PlantPost.swift in Sources */,
 				A9D289251FE9CCF000D453B6 /* CalendarController.swift in Sources */,
 				44EE3AFF21A261940040B707 /* CustomCell.swift in Sources */,

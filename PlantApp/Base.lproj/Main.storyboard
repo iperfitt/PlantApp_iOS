@@ -135,12 +135,18 @@
                                                 <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ie0-Td-wpo">
                                                     <rect key="frame" x="149" y="110" width="77" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.87456655500000002" green="0.85813039540000002" blue="0.52009350060000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" title="water plant"/>
+                                                    <connections>
+                                                        <action selector="waterPlant:" destination="OAj-vb-Pvl" eventType="touchUpInside" id="OHl-Hn-XLT"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="waterPlant" destination="ie0-Td-wpo" id="9Px-z2-T1B"/>
+                                            <outlet property="lastWateredDate" destination="oee-2S-97T" id="pYm-as-b9b"/>
+                                            <outlet property="nickname" destination="0dE-I0-E0x" id="S5q-mW-1j8"/>
+                                            <outlet property="waterPlant" destination="ie0-Td-wpo" id="CNc-JA-gKY"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -191,6 +197,7 @@
                         <segue destination="6eg-yc-Ue1" kind="show" identifier="AddAPlantSegue" id="H4e-5G-zRG"/>
                         <segue destination="Jp6-Af-t2r" kind="show" identifier="CollectionViewSegue" id="WEJ-uM-5Zx"/>
                         <segue destination="oSW-W4-e0W" kind="show" identifier="CalendarSegue" id="Zxv-gf-WT4"/>
+                        <segue destination="14b-qB-emK" kind="show" identifier="ProfileDetailSegue" id="ZD5-8z-JqL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Yk-Q1-PoZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -265,10 +272,10 @@
             </objects>
             <point key="canvasLocation" x="2422" y="2"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile Detail View Controller-->
         <scene sceneID="hJg-KL-4sw">
             <objects>
-                <viewController id="14b-qB-emK" sceneMemberID="viewController">
+                <viewController id="14b-qB-emK" customClass="ProfileDetailViewController" customModule="PlantApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EGN-ev-aS7"/>
                         <viewControllerLayoutGuide type="bottom" id="5Vl-e5-9DT"/>
@@ -276,12 +283,27 @@
                     <view key="view" contentMode="scaleToFill" id="1xO-V5-X6T">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJ2-XG-tpV">
+                                <rect key="frame" x="244" y="293" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="eJ2-XG-tpV" secondAttribute="trailing" constant="73" id="HpN-qi-7R1"/>
+                            <constraint firstItem="eJ2-XG-tpV" firstAttribute="top" secondItem="EGN-ev-aS7" secondAttribute="bottom" constant="229" id="r1i-en-WiQ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="eJ2-XG-tpV" id="ErQ-Po-61K"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h6k-Xg-RTV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1337" y="-802"/>
+            <point key="canvasLocation" x="1342" y="-822"/>
         </scene>
         <!--AddA Plant Controller-->
         <scene sceneID="ASb-1g-Vw5">
