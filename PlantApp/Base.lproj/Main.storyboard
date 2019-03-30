@@ -118,7 +118,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="250.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0dE-I0-E0x" userLabel="Nickname">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0dE-I0-E0x" userLabel="Nickname">
                                                     <rect key="frame" x="15" y="105" width="33.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -132,20 +132,31 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ie0-Td-wpo">
-                                                    <rect key="frame" x="149" y="110" width="77" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ie0-Td-wpo">
+                                                    <rect key="frame" x="149" y="110.5" width="77" height="30"/>
                                                     <color key="backgroundColor" red="0.87456655500000002" green="0.85813039540000002" blue="0.52009350060000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" title="water plant"/>
                                                     <connections>
                                                         <action selector="waterPlant:" destination="OAj-vb-Pvl" eventType="touchUpInside" id="OHl-Hn-XLT"/>
                                                     </connections>
                                                 </button>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fug-wA-EoJ">
+                                                    <rect key="frame" x="66.5" y="41" width="242" height="168.5"/>
+                                                </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Fug-wA-EoJ" firstAttribute="leading" secondItem="0dE-I0-E0x" secondAttribute="trailing" constant="18" id="LgI-91-XRu"/>
+                                                <constraint firstItem="Fug-wA-EoJ" firstAttribute="centerX" secondItem="ie0-Td-wpo" secondAttribute="centerX" id="OFI-5s-cUH"/>
+                                                <constraint firstItem="Fug-wA-EoJ" firstAttribute="centerX" secondItem="l0g-w5-vht" secondAttribute="centerX" id="TbX-w2-UwZ"/>
+                                                <constraint firstItem="Fug-wA-EoJ" firstAttribute="top" secondItem="l0g-w5-vht" secondAttribute="topMargin" constant="30" id="ksh-qh-A5Q"/>
+                                                <constraint firstItem="Fug-wA-EoJ" firstAttribute="centerY" secondItem="l0g-w5-vht" secondAttribute="centerY" id="o9O-Gb-y1g"/>
+                                                <constraint firstItem="Fug-wA-EoJ" firstAttribute="centerY" secondItem="ie0-Td-wpo" secondAttribute="centerY" id="wQ3-lr-qzz"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="lastWateredDate" destination="oee-2S-97T" id="pYm-as-b9b"/>
                                             <outlet property="nickname" destination="0dE-I0-E0x" id="S5q-mW-1j8"/>
+                                            <outlet property="plantPhoto" destination="Fug-wA-EoJ" id="fXV-HT-e26"/>
                                             <outlet property="waterPlant" destination="ie0-Td-wpo" id="CNc-JA-gKY"/>
                                         </connections>
                                     </tableViewCell>
@@ -190,6 +201,14 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Fug-wA-EoJ" firstAttribute="centerX" secondItem="ie0-Td-wpo" secondAttribute="centerX" id="8tV-yM-M2p"/>
+                            <constraint firstItem="Fug-wA-EoJ" firstAttribute="top" secondItem="fLP-VU-6rD" secondAttribute="topMargin" constant="128" id="99y-DG-KGh"/>
+                            <constraint firstItem="Fug-wA-EoJ" firstAttribute="leading" secondItem="0dE-I0-E0x" secondAttribute="trailing" constant="18" id="HTY-J0-Pxd"/>
+                            <constraint firstItem="Fug-wA-EoJ" firstAttribute="centerY" secondItem="ie0-Td-wpo" secondAttribute="centerY" id="JEq-NL-ei0"/>
+                            <constraint firstItem="Fug-wA-EoJ" firstAttribute="centerX" secondItem="fLP-VU-6rD" secondAttribute="centerX" id="fzb-Ma-iR9"/>
+                            <constraint firstItem="Fug-wA-EoJ" firstAttribute="centerY" secondItem="fLP-VU-6rD" secondAttribute="centerY" constant="-57.25" id="r82-sy-Yuf"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="TableView" destination="Vc8-O0-e92" id="sCL-cK-37U"/>

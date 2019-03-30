@@ -60,10 +60,11 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
         imageStorageRef.getData(maxSize: 2 * 1024 * 1024, completion: {(data, error) in
         if let error = error {
             print("ERROR DOWNLOADING IMAGE")
+            print(error.localizedDescription)
             } else {
             if let imageData = data {
             let image = UIImage(data: imageData)
-                cell.imageView?.image = image
+                cell.plantPhoto.image = image
                 self.tableView.reloadData()
             
                 }

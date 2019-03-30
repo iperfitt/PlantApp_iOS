@@ -17,5 +17,6 @@ class ProfileControllerTableViewCell: UITableViewCell {
     
     @IBOutlet weak var waterPlant: UIButton!
     
+    @IBOutlet weak var plantPhoto: UIImageView!
     
 }
