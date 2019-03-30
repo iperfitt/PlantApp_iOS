@@ -11,11 +11,8 @@ import UIKit
 
 class ProfileControllerTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var photo: UIImageView!
+    @IBOutlet weak var waterPlant: UIButton!
     
-    @IBOutlet weak var nickname: UILabel!
-    
-    @IBOutlet weak var lastWatered: UILabel!
     
     
 }

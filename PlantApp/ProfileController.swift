@@ -82,49 +82,18 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
         super.viewDidLoad()
         tableView.dataSource = self
         loadPosts()
-//        var post = PlantPost(nicknameText: "test", photoUrlString: "url")
-//        print(post.nickname)
-//        print(post.photoUrl)
         
-//        Database.database().reference().child("Users").child((Auth.auth().currentUser?.uid)!).observe(.childAdded, with: { (snapshot) in
-//
-//
-//
-//            if let dictionary = snapshot.value as? [String: Any] {
-//
-//
-//                for i in snapshot.children.allObjects as! [DataSnapshot] {
-//                    let dic2 = i.value as! [String: String]
-//                    self.downloadURLS.append(dic2["downloadURL"] as! String)
-//
-//
-//                }
-//
-//            }
-//
-//            for i in self.downloadURLS {
-//                let imageStorageRef = Storage.storage().reference(forURL: i)
-//
-//                imageStorageRef.getData(maxSize: 2 * 1024 * 1024, completion: {(data, error) in
-//
-//                    if let error = error {
-//                        print("ERROR DOWNLOADING IMAGE")
-//                    } else {
-//                        if let imageData = data {
-//                                let image = UIImage(data: imageData)
-//                                self.photos.append(image!)
-//                                self.tableView.reloadData()
-//
-//                        }
-//                    }
-//
-//                })
-//            }
-//
-//        })
-//
-//
+        let longPressRec = UILongPressGestureRecognizer(target: self, action: #selector(waterPlant(press:)))
+        longPressRec.minimumPressDuration = 2.0
+        //waterPlant.addGestureRecognizer(longPressRec)
+
    }
+    
+    func waterPlant(press:UILongPressGestureRecognizer) {
+        if press.state == .began {
+            
+        }
+    }
 }
 
 
