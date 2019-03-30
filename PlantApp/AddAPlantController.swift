@@ -8,17 +8,28 @@
 
 import UIKit
 
+import Firebase
+import FirebaseDatabase
+import FirebaseStorage
+
+
 class AddAPlantController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    let nickName = UITextField(frame: CGRect(x: 20, y: 120, width: 300, height: 40))
-    let commonName = UITextField(frame: CGRect(x: 20, y: 120, width: 300, height: 40))
-    let species = UITextField(frame: CGRect(x: 20, y: 120, width: 300, height: 40))
-    let genus = UITextField(frame: CGRect(x: 20, y: 120, width: 300, height: 40))
-    let datePurchased = UITextField(frame: CGRect(x: 20, y: 120, width: 300, height: 40))
-    let dateLastWatered = UITextField(frame: CGRect(x: 20, y: 120, width: 300, height: 40))
-    let lightNeeds = UITextField(frame: CGRect(x: 20, y: 120, width: 300, height: 40))
-    let waterNeeds = UITextField(frame: CGRect(x: 20, y: 120, width: 300, height: 40))
-    let fertilizeNeeds = UITextField(frame: CGRect(x: 20, y: 120, width: 300, height: 40))
+    @IBOutlet weak var nickName: UITextField!
+    
+    @IBOutlet var commonName: UITextField!
+    
+    @IBOutlet weak var species: UITextField!
+
+    @IBOutlet weak var genus: UITextField!
+    
+    @IBOutlet weak var datePurchased: UITextField!
+    
+    @IBOutlet weak var lightNeeds: UITextField!
+   
+    @IBOutlet weak var waterNeeds: UITextField!
+    
+    @IBOutlet weak var fertilizerNeeds: UITextField!
     
     @IBOutlet var savePlant: UIButton!
     
@@ -26,11 +37,24 @@ class AddAPlantController: UIViewController, UIImagePickerControllerDelegate, UI
     
     @IBOutlet var addAPhoto: UIButton!
     
+    @IBOutlet weak var chosenImage: UIImageView!
+    
+    let storageRef = Storage.storage().reference()
+    
+    let databaseRef = Database.database().reference() as DatabaseReference!
+    
+    let picker = UIImagePickerController()
+    
+    let uid = ""
+    
+    let userID = Auth.auth().currentUser!.uid
+
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
-            self.previewImage.image = image
-            addAPhoto.isHidden = true
+            previewImage.image = image
+            addAPhoto.setTitle("Change Photo", for: .normal)
             savePlant.isHidden = false
+            chosenImage.image = image
             
         }
         self.dismiss(animated: true, completion: nil)
@@ -44,72 +68,58 @@ class AddAPlantController: UIViewController, UIImagePickerControllerDelegate, UI
     }
     
     @IBAction func postPlant(_ sender: Any) {
+            var data = Data()
+            let tDouble = Date()
+            //convert time since reference date into a string
+            let tString = String(format:"%.1f", tDouble.timeIntervalSinceReferenceDate as CVarArg)
+            let metaData = StorageMetadata()
+            data = UIImageJPEGRepresentation(chosenImage.image!, 0.8)!
+            metaData.contentType = "image/jpg"
+            self.storageRef.child(Auth.auth().currentUser?.uid as! String).child(tString).putData(data as Data, metadata: metaData){(metaData,error) in
+                if let error = error {
+                    return
+                } else{
+                    let downloadURL = metaData!.downloadURL()!.absoluteString
+                    self.databaseRef?.child("Users").child(self.userID).child("Plants").child(tString.replacingOccurrences(of: ".", with: "-", options: .literal, range: nil)).updateChildValues(["downloadURL": downloadURL,
+                        "nickName": self.nickName.text!, "commonName": self.commonName.text!, "species": self.species.text!, "genus": self.genus.text!, "datePurchased":self.datePurchased.text!,
+                        "lightNeeds": self.lightNeeds.text!, "waterNeeds": self.waterNeeds.text!, "fertilizerNeeds": self.fertilizerNeeds.text!])
+            }
+        }
     }
     
-    let picker = UIImagePickerController()
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        AddTextFields()
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        nickName.resignFirstResponder()
+        commonName.resignFirstResponder()
+        species.resignFirstResponder()
+        genus.resignFirstResponder()
+        datePurchased.resignFirstResponder()
+        lightNeeds.resignFirstResponder()
+        waterNeeds.resignFirstResponder()
+        fertilizerNeeds.resignFirstResponder()
+        return(true)
+    }
+    
+    func setDelegates() {
+       self.nickName.delegate = self as? UITextFieldDelegate
+        self.commonName.delegate = self as? UITextFieldDelegate
+        self.species.delegate = self as? UITextFieldDelegate
+        self.genus.delegate = self as? UITextFieldDelegate
+        self.datePurchased.delegate = self as? UITextFieldDelegate
+        self.lightNeeds.delegate = self as? UITextFieldDelegate
+        self.waterNeeds.delegate = self as? UITextFieldDelegate
+        self.fertilizerNeeds.delegate = self as? UITextFieldDelegate
         picker.delegate = self
     }
     
-    func AddTextFields() {
-        var textFields: [UITextField] = [nickName, commonName, species, genus, datePurchased, dateLastWatered,lightNeeds,waterNeeds,fertilizeNeeds]
-        var placeholders: [String] = ["Nickname", "Common Name", "Species", "Genus", "Date Purchased", "Date Last Watered","Light Needs","Water Needs","Fertilization Needs"]
-        //Set up Common Name textfield
-        for i in 0...8 {
-            textFields[i].placeholder = placeholders[i]
-            textFields[i].font = UIFont.systemFont(ofSize: 15)
-            textFields[i].borderStyle = UITextBorderStyle.roundedRect
-            textFields[i].keyboardType = UIKeyboardType.default
-            textFields[i].autocorrectionType = UITextAutocorrectionType.no
-            textFields[i].returnKeyType = UIReturnKeyType.done
-            textFields[i].clearButtonMode = UITextFieldViewMode.whileEditing
-            textFields[i].contentVerticalAlignment = UIControlContentVerticalAlignment.center
-            
-            //Add to view
-            self.view.addSubview(textFields[i])
-        
-            //Allow below constraints to function
-            textFields[i].translatesAutoresizingMaskIntoConstraints = false
-        
-            //Add Constraints
-            textFields[i].centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-            
-            switch textFields[i] {
-            
-            case nickName:
-                textFields[i].centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -250 ).isActive = true
-                
-            case commonName:
-                textFields[i].centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -200 ).isActive = true
-                
-            case species:
-                textFields[i].centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -150 ).isActive = true
-                
-            case genus:
-                textFields[i].centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -100 ).isActive = true
-                
-            case datePurchased:
-                textFields[i].centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -50 ).isActive = true
-                
-            case dateLastWatered:
-                textFields[i].centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 0 ).isActive = true
-                
-            case lightNeeds:
-                textFields[i].centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 50 ).isActive = true
-                
-            case waterNeeds:
-                textFields[i].centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 100 ).isActive = true
-                
-            default:
-                textFields[i].centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 150 ).isActive = true
-            }
-            
-            textFields[i].widthAnchor.constraint(equalToConstant: 150).isActive = true
-            textFields[i].heightAnchor.constraint(equalToConstant: 40).isActive = true
-            
-        }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setDelegates()
+        self.savePlant.layer.cornerRadius = 15
+        self.addAPhoto.layer.cornerRadius = 15
     }
+    
 }

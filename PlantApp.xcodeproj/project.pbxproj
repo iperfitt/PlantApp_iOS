@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		39E691030ACBDA74E63AAB8D /* Pods_PlantApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF064C1BC08C19DFCFE7305C /* Pods_PlantApp.framework */; };
+		44C01FCF21A22DB100B7855B /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C01FCE21A22DB100B7855B /* MyCollectionViewCell.swift */; };
+		44C01FD121A22F2A00B7855B /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C01FD021A22F2A00B7855B /* CollectionViewController.swift */; };
+		44EE3AFF21A261940040B707 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE3AFE21A261940040B707 /* CustomCell.swift */; };
+		A938CCF721D96F9F004F28D2 /* ProfileControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A938CCF621D96F9F004F28D2 /* ProfileControllerTableViewCell.swift */; };
 		A96BD06E1FE96F080014F9C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96BD06D1FE96F080014F9C9 /* AppDelegate.swift */; };
 		A96BD0731FE96F080014F9C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A96BD0711FE96F080014F9C9 /* Main.storyboard */; };
 		A96BD0751FE96F080014F9C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A96BD0741FE96F080014F9C9 /* Assets.xcassets */; };
@@ -17,11 +21,9 @@
 		A96BD09C1FE975E20014F9C9 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96BD09B1FE975E20014F9C9 /* LoginController.swift */; };
 		A96BD0A01FE9811D0014F9C9 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96BD09F1FE9811D0014F9C9 /* ProfileController.swift */; };
 		A99628BC213241A400A26E04 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A99628BB213241A400A26E04 /* GoogleService-Info.plist */; };
-		A99628C021335A2800A26E04 /* ProfileControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99628BF21335A2800A26E04 /* ProfileControllerTableViewCell.swift */; };
 		A99CFDCE1FEAE671000BE0FF /* AddAPlantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99CFDCD1FEAE671000BE0FF /* AddAPlantController.swift */; };
-		A9D289231FE9CB8100D453B6 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D289221FE9CB8100D453B6 /* CustomCell.swift */; };
+		A9B948D521C55DF500F529E5 /* PlantPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B948D421C55DF500F529E5 /* PlantPost.swift */; };
 		A9D289251FE9CCF000D453B6 /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D289241FE9CCF000D453B6 /* CalendarController.swift */; };
-		A9D289271FE9CF9600D453B6 /* MyPlantsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D289261FE9CF9600D453B6 /* MyPlantsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +45,11 @@
 
 /* Begin PBXFileReference section */
 		05EE3C1987BDC8278A27A421 /* Pods-PlantApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlantApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-PlantApp/Pods-PlantApp.release.xcconfig"; sourceTree = "<group>"; };
+		44C01FCE21A22DB100B7855B /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
+		44C01FD021A22F2A00B7855B /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		44EE3AFE21A261940040B707 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		452C481D59D124CB68C68A3A /* Pods-PlantApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlantApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlantApp/Pods-PlantApp.debug.xcconfig"; sourceTree = "<group>"; };
+		A938CCF621D96F9F004F28D2 /* ProfileControllerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileControllerTableViewCell.swift; sourceTree = "<group>"; };
 		A96BD06A1FE96F080014F9C9 /* PlantApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A96BD06D1FE96F080014F9C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A96BD0721FE96F080014F9C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -59,11 +65,9 @@
 		A96BD09B1FE975E20014F9C9 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		A96BD09F1FE9811D0014F9C9 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		A99628BB213241A400A26E04 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		A99628BF21335A2800A26E04 /* ProfileControllerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileControllerTableViewCell.swift; sourceTree = "<group>"; };
 		A99CFDCD1FEAE671000BE0FF /* AddAPlantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAPlantController.swift; sourceTree = "<group>"; };
-		A9D289221FE9CB8100D453B6 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		A9B948D421C55DF500F529E5 /* PlantPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantPost.swift; sourceTree = "<group>"; };
 		A9D289241FE9CCF000D453B6 /* CalendarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarController.swift; sourceTree = "<group>"; };
-		A9D289261FE9CF9600D453B6 /* MyPlantsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantsController.swift; sourceTree = "<group>"; };
 		EF064C1BC08C19DFCFE7305C /* Pods_PlantApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlantApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -113,6 +117,7 @@
 		A96BD0611FE96F080014F9C9 = {
 			isa = PBXGroup;
 			children = (
+				A9B948D321C55DDC00F529E5 /* Model */,
 				A96BD06C1FE96F080014F9C9 /* PlantApp */,
 				A96BD0811FE96F080014F9C9 /* PlantAppTests */,
 				A96BD08C1FE96F080014F9C9 /* PlantAppUITests */,
@@ -135,19 +140,20 @@
 		A96BD06C1FE96F080014F9C9 /* PlantApp */ = {
 			isa = PBXGroup;
 			children = (
+				44C01FCE21A22DB100B7855B /* MyCollectionViewCell.swift */,
+				44C01FD021A22F2A00B7855B /* CollectionViewController.swift */,
 				A96BD06D1FE96F080014F9C9 /* AppDelegate.swift */,
+				44EE3AFE21A261940040B707 /* CustomCell.swift */,
 				A9D289241FE9CCF000D453B6 /* CalendarController.swift */,
 				A96BD09B1FE975E20014F9C9 /* LoginController.swift */,
-				A9D289261FE9CF9600D453B6 /* MyPlantsController.swift */,
 				A99CFDCD1FEAE671000BE0FF /* AddAPlantController.swift */,
+				A938CCF621D96F9F004F28D2 /* ProfileControllerTableViewCell.swift */,
 				A96BD09F1FE9811D0014F9C9 /* ProfileController.swift */,
-				A99628BF21335A2800A26E04 /* ProfileControllerTableViewCell.swift */,
 				A96BD0711FE96F080014F9C9 /* Main.storyboard */,
-				A96BD0741FE96F080014F9C9 /* Assets.xcassets */,
 				A96BD0761FE96F080014F9C9 /* LaunchScreen.storyboard */,
+				A96BD0741FE96F080014F9C9 /* Assets.xcassets */,
 				A99628BB213241A400A26E04 /* GoogleService-Info.plist */,
 				A96BD0791FE96F080014F9C9 /* Info.plist */,
-				A9D289221FE9CB8100D453B6 /* CustomCell.swift */,
 			);
 			path = PlantApp;
 			sourceTree = "<group>";
@@ -170,6 +176,14 @@
 			path = PlantAppUITests;
 			sourceTree = "<group>";
 		};
+		A9B948D321C55DDC00F529E5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A9B948D421C55DF500F529E5 /* PlantPost.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -182,6 +196,7 @@
 				A96BD0671FE96F080014F9C9 /* Frameworks */,
 				A96BD0681FE96F080014F9C9 /* Resources */,
 				3419548140841BC41C6A7D3F /* [CP] Embed Pods Frameworks */,
+				F9B8D8211E8DBA3A36F1DC12 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -235,7 +250,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Ian Perfitt";
 				TargetAttributes = {
 					A96BD0691FE96F080014F9C9 = {
@@ -314,6 +329,8 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -321,6 +338,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,6 +365,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F9B8D8211E8DBA3A36F1DC12 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PlantApp/Pods-PlantApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -354,13 +388,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				A96BD09C1FE975E20014F9C9 /* LoginController.swift in Sources */,
-				A9D289271FE9CF9600D453B6 /* MyPlantsController.swift in Sources */,
 				A96BD06E1FE96F080014F9C9 /* AppDelegate.swift in Sources */,
+				44C01FCF21A22DB100B7855B /* MyCollectionViewCell.swift in Sources */,
+				A9B948D521C55DF500F529E5 /* PlantPost.swift in Sources */,
 				A9D289251FE9CCF000D453B6 /* CalendarController.swift in Sources */,
+				44EE3AFF21A261940040B707 /* CustomCell.swift in Sources */,
+				44C01FD121A22F2A00B7855B /* CollectionViewController.swift in Sources */,
+				A938CCF721D96F9F004F28D2 /* ProfileControllerTableViewCell.swift in Sources */,
 				A99CFDCE1FEAE671000BE0FF /* AddAPlantController.swift in Sources */,
-				A9D289231FE9CB8100D453B6 /* CustomCell.swift in Sources */,
 				A96BD0A01FE9811D0014F9C9 /* ProfileController.swift in Sources */,
-				A99628C021335A2800A26E04 /* ProfileControllerTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +465,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -436,6 +473,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -487,6 +525,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -494,6 +533,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
