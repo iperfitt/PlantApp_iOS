@@ -148,7 +148,6 @@
                                                 <constraint firstItem="Fug-wA-EoJ" firstAttribute="leading" secondItem="0dE-I0-E0x" secondAttribute="trailing" constant="18" id="LgI-91-XRu"/>
                                                 <constraint firstItem="Fug-wA-EoJ" firstAttribute="centerX" secondItem="ie0-Td-wpo" secondAttribute="centerX" id="OFI-5s-cUH"/>
                                                 <constraint firstItem="Fug-wA-EoJ" firstAttribute="centerX" secondItem="l0g-w5-vht" secondAttribute="centerX" id="TbX-w2-UwZ"/>
-                                                <constraint firstItem="Fug-wA-EoJ" firstAttribute="top" secondItem="l0g-w5-vht" secondAttribute="topMargin" constant="30" id="ksh-qh-A5Q"/>
                                                 <constraint firstItem="Fug-wA-EoJ" firstAttribute="centerY" secondItem="l0g-w5-vht" secondAttribute="centerY" id="o9O-Gb-y1g"/>
                                                 <constraint firstItem="Fug-wA-EoJ" firstAttribute="centerY" secondItem="ie0-Td-wpo" secondAttribute="centerY" id="wQ3-lr-qzz"/>
                                             </constraints>
@@ -211,7 +210,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="TableView" destination="Vc8-O0-e92" id="sCL-cK-37U"/>
                         <outlet property="tableView" destination="Vc8-O0-e92" id="VU5-e6-aUQ"/>
                         <segue destination="6eg-yc-Ue1" kind="show" identifier="AddAPlantSegue" id="H4e-5G-zRG"/>
                         <segue destination="Jp6-Af-t2r" kind="show" identifier="CollectionViewSegue" id="WEJ-uM-5Zx"/>
