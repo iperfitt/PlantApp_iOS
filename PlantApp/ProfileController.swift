@@ -16,6 +16,11 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     @IBOutlet var tableView: UITableView!
     
+    @IBAction func waterPlant(_ sender: Any) {
+        performSegue(withIdentifier: "ProfileDetailSegue", sender: self)
+        
+    }
+    
     let databaseRef = Database.database().reference() as DatabaseReference!
     
     let userID = Auth.auth().currentUser!.uid
@@ -46,16 +51,20 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = plantPosts[indexPath.row].nickname
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProfileControllerTableViewCell
+        cell.nickname.text = plantPosts[indexPath.row].nickname
+        cell.lastWateredDate.text = "temp"
+        cell.waterPlant.tag = indexPath.row
+        cell.waterPlant.addTarget(self, action: "waterPlant", for: .touchUpInside)
         let imageStorageRef = Storage.storage().reference(forURL: plantPosts[indexPath.row].photoUrl)
         imageStorageRef.getData(maxSize: 2 * 1024 * 1024, completion: {(data, error) in
         if let error = error {
             print("ERROR DOWNLOADING IMAGE")
+            print(error.localizedDescription)
             } else {
             if let imageData = data {
             let image = UIImage(data: imageData)
-                cell.imageView?.image = image
+                cell.plantPhoto.image = image
                 self.tableView.reloadData()
             
                 }
@@ -89,7 +98,7 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
 
    }
     
-    func waterPlant(press:UILongPressGestureRecognizer) {
+    @objc func waterPlant(press:UILongPressGestureRecognizer) {
         if press.state == .began {
             
         }

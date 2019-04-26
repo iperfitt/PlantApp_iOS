@@ -20,6 +20,7 @@
 		A96BD08E1FE96F080014F9C9 /* PlantAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96BD08D1FE96F080014F9C9 /* PlantAppUITests.swift */; };
 		A96BD09C1FE975E20014F9C9 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96BD09B1FE975E20014F9C9 /* LoginController.swift */; };
 		A96BD0A01FE9811D0014F9C9 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96BD09F1FE9811D0014F9C9 /* ProfileController.swift */; };
+		A9822246224FD754009D44E3 /* ProfileDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9822245224FD754009D44E3 /* ProfileDetailViewController.swift */; };
 		A99628BC213241A400A26E04 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A99628BB213241A400A26E04 /* GoogleService-Info.plist */; };
 		A99CFDCE1FEAE671000BE0FF /* AddAPlantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99CFDCD1FEAE671000BE0FF /* AddAPlantController.swift */; };
 		A9B948D521C55DF500F529E5 /* PlantPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B948D421C55DF500F529E5 /* PlantPost.swift */; };
@@ -64,6 +65,7 @@
 		A96BD08F1FE96F080014F9C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A96BD09B1FE975E20014F9C9 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		A96BD09F1FE9811D0014F9C9 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		A9822245224FD754009D44E3 /* ProfileDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailViewController.swift; sourceTree = "<group>"; };
 		A99628BB213241A400A26E04 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A99CFDCD1FEAE671000BE0FF /* AddAPlantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAPlantController.swift; sourceTree = "<group>"; };
 		A9B948D421C55DF500F529E5 /* PlantPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantPost.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				44C01FCE21A22DB100B7855B /* MyCollectionViewCell.swift */,
+				A9822245224FD754009D44E3 /* ProfileDetailViewController.swift */,
 				44C01FD021A22F2A00B7855B /* CollectionViewController.swift */,
 				A96BD06D1FE96F080014F9C9 /* AppDelegate.swift */,
 				44EE3AFE21A261940040B707 /* CustomCell.swift */,
@@ -196,7 +199,6 @@
 				A96BD0671FE96F080014F9C9 /* Frameworks */,
 				A96BD0681FE96F080014F9C9 /* Resources */,
 				3419548140841BC41C6A7D3F /* [CP] Embed Pods Frameworks */,
-				F9B8D8211E8DBA3A36F1DC12 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -325,7 +327,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-PlantApp/Pods-PlantApp-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-PlantApp/Pods-PlantApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
@@ -344,7 +346,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PlantApp/Pods-PlantApp-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PlantApp/Pods-PlantApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A42F6DE4115C0270BB01561F /* [CP] Check Pods Manifest.lock */ = {
@@ -365,21 +367,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F9B8D8211E8DBA3A36F1DC12 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PlantApp/Pods-PlantApp-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -390,6 +377,7 @@
 				A96BD09C1FE975E20014F9C9 /* LoginController.swift in Sources */,
 				A96BD06E1FE96F080014F9C9 /* AppDelegate.swift in Sources */,
 				44C01FCF21A22DB100B7855B /* MyCollectionViewCell.swift in Sources */,
+				A9822246224FD754009D44E3 /* ProfileDetailViewController.swift in Sources */,
 				A9B948D521C55DF500F529E5 /* PlantPost.swift in Sources */,
 				A9D289251FE9CCF000D453B6 /* CalendarController.swift in Sources */,
 				44EE3AFF21A261940040B707 /* CustomCell.swift in Sources */,
@@ -577,7 +565,7 @@
 				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = PlantApp.PlantApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -595,7 +583,7 @@
 				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = PlantApp.PlantApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
