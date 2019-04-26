@@ -98,7 +98,7 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
 
    }
     
-    func waterPlant(press:UILongPressGestureRecognizer) {
+    @objc func waterPlant(press:UILongPressGestureRecognizer) {
         if press.state == .began {
             
         }
