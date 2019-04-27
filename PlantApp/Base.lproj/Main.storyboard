@@ -132,32 +132,21 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ie0-Td-wpo" userLabel="waterPlant">
-                                                    <rect key="frame" x="149" y="110.5" width="77" height="30"/>
-                                                    <color key="backgroundColor" red="0.87456655500000002" green="0.85813039540000002" blue="0.52009350060000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <state key="normal" title="water plant"/>
-                                                    <connections>
-                                                        <action selector="waterPlant:" destination="OAj-vb-Pvl" eventType="touchUpInside" id="6fF-42-elr"/>
-                                                    </connections>
-                                                </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fug-wA-EoJ">
                                                     <rect key="frame" x="145" y="162" width="164" height="48"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Fug-wA-EoJ" firstAttribute="leading" secondItem="0dE-I0-E0x" secondAttribute="trailing" constant="18" id="LgI-91-XRu"/>
-                                                <constraint firstItem="Fug-wA-EoJ" firstAttribute="centerX" secondItem="ie0-Td-wpo" secondAttribute="centerX" id="OFI-5s-cUH"/>
                                                 <constraint firstItem="Fug-wA-EoJ" firstAttribute="centerX" secondItem="l0g-w5-vht" secondAttribute="centerX" id="TbX-w2-UwZ"/>
                                                 <constraint firstItem="Fug-wA-EoJ" firstAttribute="top" secondItem="l0g-w5-vht" secondAttribute="topMargin" constant="30" id="ksh-qh-A5Q"/>
                                                 <constraint firstItem="Fug-wA-EoJ" firstAttribute="centerY" secondItem="l0g-w5-vht" secondAttribute="centerY" id="o9O-Gb-y1g"/>
-                                                <constraint firstItem="Fug-wA-EoJ" firstAttribute="centerY" secondItem="ie0-Td-wpo" secondAttribute="centerY" id="wQ3-lr-qzz"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="lastWateredDate" destination="oee-2S-97T" id="pYm-as-b9b"/>
                                             <outlet property="nickname" destination="0dE-I0-E0x" id="S5q-mW-1j8"/>
                                             <outlet property="plantPhoto" destination="Fug-wA-EoJ" id="fXV-HT-e26"/>
-                                            <outlet property="waterPlant" destination="ie0-Td-wpo" id="CNc-JA-gKY"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -199,13 +188,19 @@
                                     <action selector="goToCalendar:" destination="OAj-vb-Pvl" eventType="touchUpInside" id="Jhg-Rq-xYc"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mo5-FS-x8G">
+                                <rect key="frame" x="177" y="231" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="waterPlant:" destination="OAj-vb-Pvl" eventType="touchUpInside" id="AhT-UG-Qaz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Fug-wA-EoJ" firstAttribute="centerX" secondItem="ie0-Td-wpo" secondAttribute="centerX" id="8tV-yM-M2p"/>
                             <constraint firstItem="Fug-wA-EoJ" firstAttribute="top" secondItem="fLP-VU-6rD" secondAttribute="topMargin" constant="128" id="99y-DG-KGh"/>
                             <constraint firstItem="Fug-wA-EoJ" firstAttribute="leading" secondItem="0dE-I0-E0x" secondAttribute="trailing" constant="18" id="HTY-J0-Pxd"/>
-                            <constraint firstItem="Fug-wA-EoJ" firstAttribute="centerY" secondItem="ie0-Td-wpo" secondAttribute="centerY" id="JEq-NL-ei0"/>
                             <constraint firstItem="Fug-wA-EoJ" firstAttribute="centerX" secondItem="fLP-VU-6rD" secondAttribute="centerX" id="fzb-Ma-iR9"/>
                             <constraint firstItem="Fug-wA-EoJ" firstAttribute="centerY" secondItem="fLP-VU-6rD" secondAttribute="centerY" constant="-57.25" id="r82-sy-Yuf"/>
                         </constraints>

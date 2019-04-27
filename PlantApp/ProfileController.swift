@@ -17,10 +17,10 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet var tableView: UITableView!
     
 
-//    @IBAction func waterPlant(_ sender: Any) {
-//        performSegue(withIdentifier: "ProfileDetailSegue", sender: self)
-//    }
-//    
+    @IBAction func waterPlant(_ sender: Any) {
+        performSegue(withIdentifier: "ProfileDetailSegue", sender: self)
+    }
+    
     let databaseRef = Database.database().reference() as DatabaseReference!
     
     let userID = Auth.auth().currentUser!.uid
@@ -59,7 +59,6 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
         let imageStorageRef = Storage.storage().reference(forURL: plantPosts[indexPath.row].photoUrl)
         imageStorageRef.getData(maxSize: 2 * 1024 * 1024, completion: {(data, error) in
         if let error = error {
-            print("ERROR DOWNLOADING IMAGE")
             print(error.localizedDescription)
             } else {
             if let imageData = data {
