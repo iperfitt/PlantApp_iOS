@@ -17,10 +17,10 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet var tableView: UITableView!
     
 
-    @IBAction func waterPlant(_ sender: Any) {
-        performSegue(withIdentifier: "ProfileDetailSegue", sender: self)
-    }
-    
+//    @IBAction func waterPlant(_ sender: Any) {
+//        performSegue(withIdentifier: "ProfileDetailSegue", sender: self)
+//    }
+//    
     let databaseRef = Database.database().reference() as DatabaseReference!
     
     let userID = Auth.auth().currentUser!.uid
@@ -54,8 +54,8 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProfileControllerTableViewCell
         cell.nickname.text = plantPosts[indexPath.row].nickname
         cell.lastWateredDate.text = "temp"
-        cell.waterPlant.tag = indexPath.row
-        cell.waterPlant.addTarget(self, action: Selector(("waterPlant")), for: .touchUpInside)
+        //cell.waterPlant.tag = indexPath.row
+        //cell.waterPlant.addTarget(self, action: Selector(("waterPlant")), for: .touchUpInside)
         let imageStorageRef = Storage.storage().reference(forURL: plantPosts[indexPath.row].photoUrl)
         imageStorageRef.getData(maxSize: 2 * 1024 * 1024, completion: {(data, error) in
         if let error = error {
@@ -92,17 +92,17 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
         tableView.dataSource = self
         loadPosts()
         
-        let longPressRec = UILongPressGestureRecognizer(target: self, action: #selector(waterPlant(press:)))
-        longPressRec.minimumPressDuration = 2.0
+       // let longPressRec = UILongPressGestureRecognizer(target: self, action: #selector(waterPlant(press:)))
+        //longPressRec.minimumPressDuration = 2.0
         //waterPlant.addGestureRecognizer(longPressRec)
 
    }
     
-    @objc func waterPlant(press:UILongPressGestureRecognizer) {
-        if press.state == .began {
-            
-        }
-    }
+//    @objc func waterPlant(press:UILongPressGestureRecognizer) {
+//        if press.state == .began {
+//            
+//        }
+//    }
 }
 
 
