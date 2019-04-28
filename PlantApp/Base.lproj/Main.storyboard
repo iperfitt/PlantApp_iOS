@@ -118,17 +118,20 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="250.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fug-wA-EoJ">
-                                                    <rect key="frame" x="145" y="162" width="164" height="48"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fug-wA-EoJ">
+                                                    <rect key="frame" x="145" y="88" width="164" height="122"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="164" id="O2V-Py-4ZH"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umd-Ps-RgK" userLabel="Last Watered Date">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umd-Ps-RgK" userLabel="Last Watered Date">
                                                     <rect key="frame" x="35" y="88" width="42" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzw-MQ-n9M" userLabel="Nickname">
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzw-MQ-n9M" userLabel="Nickname">
                                                     <rect key="frame" x="31" y="43" width="46" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button"/>
@@ -137,11 +140,6 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Fug-wA-EoJ" firstAttribute="centerX" secondItem="l0g-w5-vht" secondAttribute="centerX" id="TbX-w2-UwZ"/>
-                                                <constraint firstItem="Fug-wA-EoJ" firstAttribute="top" secondItem="l0g-w5-vht" secondAttribute="topMargin" constant="30" id="ksh-qh-A5Q"/>
-                                                <constraint firstItem="Fug-wA-EoJ" firstAttribute="centerY" secondItem="l0g-w5-vht" secondAttribute="centerY" id="o9O-Gb-y1g"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="NickName" destination="yzw-MQ-n9M" id="OLE-7k-QZM"/>
@@ -190,11 +188,6 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="Fug-wA-EoJ" firstAttribute="top" secondItem="fLP-VU-6rD" secondAttribute="topMargin" constant="128" id="99y-DG-KGh"/>
-                            <constraint firstItem="Fug-wA-EoJ" firstAttribute="centerX" secondItem="fLP-VU-6rD" secondAttribute="centerX" id="fzb-Ma-iR9"/>
-                            <constraint firstItem="Fug-wA-EoJ" firstAttribute="centerY" secondItem="fLP-VU-6rD" secondAttribute="centerY" constant="-57.25" id="r82-sy-Yuf"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="TableView" destination="Vc8-O0-e92" id="sCL-cK-37U"/>
