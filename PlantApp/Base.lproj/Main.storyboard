@@ -118,28 +118,46 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="250.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umd-Ps-RgK" userLabel="Last Watered Date">
-                                                    <rect key="frame" x="35" y="88" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Bv-jA-ILu">
-                                                    <rect key="frame" x="35" y="117" width="46" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Bv-jA-ILu">
+                                                    <rect key="frame" x="14" y="30" width="168" height="190.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="30" id="YN6-eE-IJH"/>
-                                                        <constraint firstAttribute="height" constant="30" id="cge-FS-h5o"/>
+                                                        <constraint firstAttribute="width" constant="168" id="FhB-k0-KdX"/>
                                                     </constraints>
-                                                    <state key="normal" title="Button"/>
                                                     <connections>
                                                         <action selector="goToPlantDetails:" destination="OAj-vb-Pvl" eventType="touchUpInside" id="pcv-uC-DdI"/>
                                                     </connections>
                                                 </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Il2-fe-k50">
+                                                    <rect key="frame" x="260" y="50" width="70" height="30"/>
+                                                    <state key="normal" title="Nickname"/>
+                                                    <connections>
+                                                        <action selector="goToPlantDetails:" destination="OAj-vb-Pvl" eventType="touchUpInside" id="FVC-zU-xMQ"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Watered" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umd-Ps-RgK" userLabel="Last Watered Date">
+                                                    <rect key="frame" x="244" y="115" width="102" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Il2-fe-k50" firstAttribute="leading" secondItem="2Bv-jA-ILu" secondAttribute="trailing" constant="78" id="0P4-eg-ZGV"/>
+                                                <constraint firstItem="Il2-fe-k50" firstAttribute="top" secondItem="l0g-w5-vht" secondAttribute="topMargin" constant="39" id="3h6-wN-aZd"/>
+                                                <constraint firstItem="2Bv-jA-ILu" firstAttribute="leading" secondItem="l0g-w5-vht" secondAttribute="leadingMargin" constant="-1" id="7nN-sd-Dov"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="umd-Ps-RgK" secondAttribute="trailing" constant="14" id="9VY-ou-TNz"/>
+                                                <constraint firstItem="2Bv-jA-ILu" firstAttribute="top" secondItem="l0g-w5-vht" secondAttribute="topMargin" constant="19" id="KCD-Es-V0r"/>
+                                                <constraint firstItem="umd-Ps-RgK" firstAttribute="top" secondItem="Il2-fe-k50" secondAttribute="bottom" constant="35" id="NEt-Pg-s25"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Il2-fe-k50" secondAttribute="trailing" constant="30" id="ZXI-Dv-6OV"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="umd-Ps-RgK" secondAttribute="bottom" constant="104" id="ixR-Hi-cPV"/>
+                                                <constraint firstItem="umd-Ps-RgK" firstAttribute="leading" secondItem="2Bv-jA-ILu" secondAttribute="trailing" constant="62" id="lbV-XF-vbx"/>
+                                                <constraint firstItem="2Bv-jA-ILu" firstAttribute="centerY" secondItem="l0g-w5-vht" secondAttribute="centerY" id="oME-A8-RTR"/>
+                                                <constraint firstItem="umd-Ps-RgK" firstAttribute="top" secondItem="Il2-fe-k50" secondAttribute="bottom" constant="35" id="vf5-Qo-dty"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="lastWateredDate" destination="umd-Ps-RgK" id="ALl-e7-qMx"/>
+                                            <outlet property="nickName" destination="Il2-fe-k50" id="1Qh-Zf-f1I"/>
                                             <outlet property="plantPhoto" destination="2Bv-jA-ILu" id="7E1-Xa-aBe"/>
                                         </connections>
                                     </tableViewCell>

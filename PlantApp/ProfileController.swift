@@ -51,7 +51,8 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProfileControllerTableViewCell
-        //cell.nickName.setTitle(plantPosts[indexPath.row].nickname, for: .normal)
+        cell.nickName.setTitle(plantPosts[indexPath.row].nickname, for: .normal)
+        print(indexPath.row)
         cell.lastWateredDate.text = "temp"
         //cell.waterPlant.tag = indexPath.row
         //cell.waterPlant.addTarget(self, action: Selector(("waterPlant")), for: .touchUpInside)
@@ -90,7 +91,6 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
         self.tableView.rowHeight = 200.0
         tableView.dataSource = self
         loadPosts()
-        
 //        let longPressRec = UILongPressGestureRecognizer(target: self, action: #selector(UIViewController.waterPlant(press: )))
 //        longPressRec.minimumPressDuration = 2.0
 //        waterPlant.addGestureRecognizer(longPressRec)
