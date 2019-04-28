@@ -54,8 +54,8 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProfileControllerTableViewCell
         cell.nickname.text = plantPosts[indexPath.row].nickname
         cell.lastWateredDate.text = "temp"
-        //cell.waterPlant.tag = indexPath.row
-        //cell.waterPlant.addTarget(self, action: Selector(("waterPlant")), for: .touchUpInside)
+        cell.waterPlant.tag = indexPath.row
+        cell.waterPlant.addTarget(self, action: Selector(("waterPlant")), for: .touchUpInside)
         let imageStorageRef = Storage.storage().reference(forURL: plantPosts[indexPath.row].photoUrl)
         imageStorageRef.getData(maxSize: 2 * 1024 * 1024, completion: {(data, error) in
         if let error = error {
@@ -91,17 +91,17 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
         tableView.dataSource = self
         loadPosts()
         
-       // let longPressRec = UILongPressGestureRecognizer(target: self, action: #selector(waterPlant(press:)))
-        //longPressRec.minimumPressDuration = 2.0
-        //waterPlant.addGestureRecognizer(longPressRec)
+        let longPressRec = UILongPressGestureRecognizer(target: self, action: #selector(waterPlant(press:)))
+        longPressRec.minimumPressDuration = 2.0
+        waterPlant.addGestureRecognizer(longPressRec)
 
    }
     
-//    @objc func waterPlant(press:UILongPressGestureRecognizer) {
-//        if press.state == .began {
-//            
-//        }
-//    }
+    @objc func waterPlant(press:UILongPressGestureRecognizer) {
+        if press.state == .began {
+            
+        }
+    }
 }
 
 

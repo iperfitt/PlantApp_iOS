@@ -135,6 +135,14 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fug-wA-EoJ">
                                                     <rect key="frame" x="145" y="162" width="164" height="48"/>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mo5-FS-x8G">
+                                                    <rect key="frame" x="164" y="110" width="46" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="waterPlant:" destination="OAj-vb-Pvl" eventType="touchUpInside" id="AeD-xi-7AB"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Fug-wA-EoJ" firstAttribute="leading" secondItem="0dE-I0-E0x" secondAttribute="trailing" constant="18" id="LgI-91-XRu"/>
@@ -147,6 +155,7 @@
                                             <outlet property="lastWateredDate" destination="oee-2S-97T" id="pYm-as-b9b"/>
                                             <outlet property="nickname" destination="0dE-I0-E0x" id="S5q-mW-1j8"/>
                                             <outlet property="plantPhoto" destination="Fug-wA-EoJ" id="fXV-HT-e26"/>
+                                            <outlet property="waterPlant" destination="Mo5-FS-x8G" id="J8Y-rj-rxv"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -186,14 +195,6 @@
                                 </state>
                                 <connections>
                                     <action selector="goToCalendar:" destination="OAj-vb-Pvl" eventType="touchUpInside" id="Jhg-Rq-xYc"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mo5-FS-x8G">
-                                <rect key="frame" x="177" y="231" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="waterPlant:" destination="OAj-vb-Pvl" eventType="touchUpInside" id="AhT-UG-Qaz"/>
                                 </connections>
                             </button>
                         </subviews>
