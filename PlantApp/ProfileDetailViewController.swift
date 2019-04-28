@@ -9,8 +9,6 @@
 import UIKit
 
 class ProfileDetailViewController: UIViewController {
-
-    @IBOutlet weak var label: UILabel!
     
     
     override func viewDidLoad() {
