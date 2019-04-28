@@ -91,7 +91,7 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
         tableView.dataSource = self
         loadPosts()
         
-        let longPressRec = UILongPressGestureRecognizer(target: self, action: #selector(waterPlant(press:)))
+        let longPressRec = UILongPressGestureRecognizer(target: self, action: #selector(UIViewController.waterPlant(press: )))
         longPressRec.minimumPressDuration = 2.0
         waterPlant.addGestureRecognizer(longPressRec)
 
