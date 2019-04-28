@@ -20,7 +20,6 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
         performSegue(withIdentifier: "ProfileDetailSegue", sender: self)
     }
     
-    
     let databaseRef = Database.database().reference() as DatabaseReference!
     
     let userID = Auth.auth().currentUser!.uid
@@ -52,7 +51,7 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProfileControllerTableViewCell
-        cell.nickName.setTitle(plantPosts[indexPath.row].nickname, for: .normal)
+        //cell.nickName.setTitle(plantPosts[indexPath.row].nickname, for: .normal)
         cell.lastWateredDate.text = "temp"
         //cell.waterPlant.tag = indexPath.row
         //cell.waterPlant.addTarget(self, action: Selector(("waterPlant")), for: .touchUpInside)
@@ -88,6 +87,7 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.rowHeight = 200.0
         tableView.dataSource = self
         loadPosts()
         

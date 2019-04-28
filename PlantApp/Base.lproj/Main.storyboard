@@ -125,16 +125,11 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzw-MQ-n9M" userLabel="Nickname">
-                                                    <rect key="frame" x="31" y="43" width="46" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button"/>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Bv-jA-ILu">
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Bv-jA-ILu">
                                                     <rect key="frame" x="35" y="117" width="46" height="30"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="46" id="NWL-I5-UuV"/>
-                                                        <constraint firstAttribute="height" constant="30" id="SQJ-o4-rG6"/>
+                                                        <constraint firstAttribute="width" constant="30" id="YN6-eE-IJH"/>
+                                                        <constraint firstAttribute="height" constant="30" id="cge-FS-h5o"/>
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
                                                     <connections>
@@ -144,9 +139,8 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="NickName" destination="yzw-MQ-n9M" id="OLE-7k-QZM"/>
                                             <outlet property="lastWateredDate" destination="umd-Ps-RgK" id="ALl-e7-qMx"/>
-                                            <outlet property="plantPhoto" destination="2Bv-jA-ILu" id="iFL-tw-n4h"/>
+                                            <outlet property="plantPhoto" destination="2Bv-jA-ILu" id="7E1-Xa-aBe"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
