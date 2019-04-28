@@ -121,7 +121,8 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fug-wA-EoJ">
                                                     <rect key="frame" x="145" y="88" width="164" height="122"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="164" id="O2V-Py-4ZH"/>
+                                                        <constraint firstAttribute="width" constant="50" id="EZc-Ol-4F2"/>
+                                                        <constraint firstAttribute="height" constant="122" id="WWv-ra-Zff"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umd-Ps-RgK" userLabel="Last Watered Date">
