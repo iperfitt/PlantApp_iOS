@@ -118,13 +118,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="250.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fug-wA-EoJ">
-                                                    <rect key="frame" x="145" y="88" width="164" height="122"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="50" id="EZc-Ol-4F2"/>
-                                                        <constraint firstAttribute="height" constant="122" id="WWv-ra-Zff"/>
-                                                    </constraints>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umd-Ps-RgK" userLabel="Last Watered Date">
                                                     <rect key="frame" x="35" y="88" width="42" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -136,8 +129,16 @@
                                                     <rect key="frame" x="31" y="43" width="46" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Bv-jA-ILu">
+                                                    <rect key="frame" x="35" y="117" width="46" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="46" id="NWL-I5-UuV"/>
+                                                        <constraint firstAttribute="height" constant="30" id="SQJ-o4-rG6"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
                                                     <connections>
-                                                        <action selector="goToPlantDetails:" destination="OAj-vb-Pvl" eventType="touchUpInside" id="Yfa-pB-Mt7"/>
+                                                        <action selector="goToPlantDetails:" destination="OAj-vb-Pvl" eventType="touchUpInside" id="pcv-uC-DdI"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -145,7 +146,7 @@
                                         <connections>
                                             <outlet property="NickName" destination="yzw-MQ-n9M" id="OLE-7k-QZM"/>
                                             <outlet property="lastWateredDate" destination="umd-Ps-RgK" id="ALl-e7-qMx"/>
-                                            <outlet property="plantPhoto" destination="Fug-wA-EoJ" id="fXV-HT-e26"/>
+                                            <outlet property="plantPhoto" destination="2Bv-jA-ILu" id="iFL-tw-n4h"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -196,7 +197,7 @@
                         <segue destination="6eg-yc-Ue1" kind="show" identifier="AddAPlantSegue" id="H4e-5G-zRG"/>
                         <segue destination="Jp6-Af-t2r" kind="show" identifier="CollectionViewSegue" id="WEJ-uM-5Zx"/>
                         <segue destination="oSW-W4-e0W" kind="show" identifier="CalendarSegue" id="Zxv-gf-WT4"/>
-                        <segue destination="14b-qB-emK" kind="show" identifier="ProfileDetailSegue" id="ZD5-8z-JqL"/>
+                        <segue destination="14b-qB-emK" kind="show" identifier="ProfileDetailSegue" id="Aht-Fc-ySN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Yk-Q1-PoZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -332,21 +333,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Nickname " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJ2-XG-tpV">
-                                <rect key="frame" x="37" y="137" width="81" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="eJ2-XG-tpV" secondAttribute="trailing" constant="73" id="HpN-qi-7R1"/>
-                            <constraint firstItem="eJ2-XG-tpV" firstAttribute="top" secondItem="EGN-ev-aS7" secondAttribute="bottom" constant="229" id="r1i-en-WiQ"/>
-                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="label" destination="eJ2-XG-tpV" id="ErQ-Po-61K"/>
+                        <outlet property="Genus" destination="TjL-4h-Gdr" id="xBy-lP-VYo"/>
+                        <outlet property="Species" destination="wCr-9e-Zyb" id="evd-mx-eiR"/>
+                        <outlet property="commonName" destination="OTH-Sz-R4G" id="PwJ-31-5zp"/>
+                        <outlet property="datePurchased" destination="0Ig-g4-Kq7" id="0CR-NO-keg"/>
+                        <outlet property="fertilizerNeeds" destination="hKh-IU-52C" id="3T1-Xu-Jq6"/>
+                        <outlet property="lightNeeds" destination="DFO-H4-xai" id="XiF-A5-hDk"/>
+                        <outlet property="waterNeeds" destination="aM7-hg-MAo" id="lnO-EB-uXv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h6k-Xg-RTV" userLabel="First Responder" sceneMemberID="firstResponder"/>

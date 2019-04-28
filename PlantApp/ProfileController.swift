@@ -19,6 +19,8 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBAction func goToPlantDetails(_ sender: Any) {
         performSegue(withIdentifier: "ProfileDetailSegue", sender: self)
     }
+    
+    
     let databaseRef = Database.database().reference() as DatabaseReference!
     
     let userID = Auth.auth().currentUser!.uid
@@ -60,8 +62,8 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
             print(error.localizedDescription)
             } else {
             if let imageData = data {
-            let image = UIImage(data: imageData)
-                cell.plantPhoto.image = image
+            let imageToSet = UIImage(data: imageData)
+                cell.plantPhoto.setImage(imageToSet, for: .normal)
                 self.tableView.reloadData()
             
                 }
