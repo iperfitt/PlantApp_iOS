@@ -16,8 +16,7 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     @IBOutlet var tableView: UITableView!
     
-
-    @IBAction func waterPlant(_ sender: Any) {
+    @IBAction func goToPlantDetails(_ sender: Any) {
         performSegue(withIdentifier: "ProfileDetailSegue", sender: self)
     }
     
@@ -52,18 +51,19 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProfileControllerTableViewCell
-        cell.nickname.text = plantPosts[indexPath.row].nickname
+        cell.nickName.setTitle(plantPosts[indexPath.row].nickname, for: .normal)
+        print(indexPath.row)
         cell.lastWateredDate.text = "temp"
-        cell.waterPlant.tag = indexPath.row
-        cell.waterPlant.addTarget(self, action: Selector(("waterPlant")), for: .touchUpInside)
+        //cell.waterPlant.tag = indexPath.row
+        //cell.waterPlant.addTarget(self, action: Selector(("waterPlant")), for: .touchUpInside)
         let imageStorageRef = Storage.storage().reference(forURL: plantPosts[indexPath.row].photoUrl)
         imageStorageRef.getData(maxSize: 2 * 1024 * 1024, completion: {(data, error) in
         if let error = error {
             print(error.localizedDescription)
             } else {
             if let imageData = data {
-            let image = UIImage(data: imageData)
-                cell.plantPhoto.image = image
+            let imageToSet = UIImage(data: imageData)
+                cell.plantPhoto.setImage(imageToSet, for: .normal)
                 self.tableView.reloadData()
             
                 }
@@ -88,9 +88,9 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.rowHeight = 200.0
         tableView.dataSource = self
         loadPosts()
-        
 //        let longPressRec = UILongPressGestureRecognizer(target: self, action: #selector(UIViewController.waterPlant(press: )))
 //        longPressRec.minimumPressDuration = 2.0
 //        waterPlant.addGestureRecognizer(longPressRec)

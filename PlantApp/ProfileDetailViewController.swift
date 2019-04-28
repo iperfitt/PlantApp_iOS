@@ -10,6 +10,21 @@ import UIKit
 
 class ProfileDetailViewController: UIViewController {
     
+    @IBOutlet weak var nickname: UILabel!
+    
+    @IBOutlet weak var commonName: UILabel!
+    
+    @IBOutlet weak var Species: UILabel!
+    
+    @IBOutlet weak var Genus: UILabel!
+    
+    @IBOutlet weak var datePurchased: UILabel!
+    
+    @IBOutlet weak var lightNeeds: UILabel!
+    
+    @IBOutlet weak var waterNeeds: UILabel!
+    
+    @IBOutlet weak var fertilizerNeeds: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
