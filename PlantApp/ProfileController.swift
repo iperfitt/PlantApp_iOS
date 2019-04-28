@@ -16,11 +16,9 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     @IBOutlet var tableView: UITableView!
     
-
-    @IBAction func waterPlant(_ sender: Any) {
+    @IBAction func goToPlantDetails(_ sender: Any) {
         performSegue(withIdentifier: "ProfileDetailSegue", sender: self)
     }
-    
     let databaseRef = Database.database().reference() as DatabaseReference!
     
     let userID = Auth.auth().currentUser!.uid
@@ -52,10 +50,10 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProfileControllerTableViewCell
-        cell.nickname.text = plantPosts[indexPath.row].nickname
+        cell.nickName.setTitle(plantPosts[indexPath.row].nickname, for: .normal)
         cell.lastWateredDate.text = "temp"
-        cell.waterPlant.tag = indexPath.row
-        cell.waterPlant.addTarget(self, action: Selector(("waterPlant")), for: .touchUpInside)
+        //cell.waterPlant.tag = indexPath.row
+        //cell.waterPlant.addTarget(self, action: Selector(("waterPlant")), for: .touchUpInside)
         let imageStorageRef = Storage.storage().reference(forURL: plantPosts[indexPath.row].photoUrl)
         imageStorageRef.getData(maxSize: 2 * 1024 * 1024, completion: {(data, error) in
         if let error = error {
@@ -91,9 +89,9 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
         tableView.dataSource = self
         loadPosts()
         
-        let longPressRec = UILongPressGestureRecognizer(target: self, action: #selector(UIViewController.waterPlant(press: )))
-        longPressRec.minimumPressDuration = 2.0
-        waterPlant.addGestureRecognizer(longPressRec)
+//        let longPressRec = UILongPressGestureRecognizer(target: self, action: #selector(UIViewController.waterPlant(press: )))
+//        longPressRec.minimumPressDuration = 2.0
+//        waterPlant.addGestureRecognizer(longPressRec)
 
    }
     

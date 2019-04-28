@@ -11,11 +11,10 @@ import UIKit
 
 class ProfileControllerTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var nickname: UILabel!
+   
+    @IBOutlet weak var nickName: UIButton!
     
     @IBOutlet weak var lastWateredDate: UILabel!
-    
-    @IBOutlet weak var waterPlant: UIButton!
     
     @IBOutlet weak var plantPhoto: UIImageView!
     
