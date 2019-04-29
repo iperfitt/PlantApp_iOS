@@ -22,6 +22,7 @@
 		A96BD0A01FE9811D0014F9C9 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96BD09F1FE9811D0014F9C9 /* ProfileController.swift */; };
 		A9822246224FD754009D44E3 /* ProfileDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9822245224FD754009D44E3 /* ProfileDetailViewController.swift */; };
 		A99628BC213241A400A26E04 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A99628BB213241A400A26E04 /* GoogleService-Info.plist */; };
+		A99CDE6C227675190049149D /* ProfileDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99CDE6B227675190049149D /* ProfileDetail.swift */; };
 		A99CFDCE1FEAE671000BE0FF /* AddAPlantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99CFDCD1FEAE671000BE0FF /* AddAPlantController.swift */; };
 		A9B948D521C55DF500F529E5 /* PlantPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B948D421C55DF500F529E5 /* PlantPost.swift */; };
 		A9D289251FE9CCF000D453B6 /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D289241FE9CCF000D453B6 /* CalendarController.swift */; };
@@ -67,6 +68,7 @@
 		A96BD09F1FE9811D0014F9C9 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		A9822245224FD754009D44E3 /* ProfileDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailViewController.swift; sourceTree = "<group>"; };
 		A99628BB213241A400A26E04 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A99CDE6B227675190049149D /* ProfileDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetail.swift; sourceTree = "<group>"; };
 		A99CFDCD1FEAE671000BE0FF /* AddAPlantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAPlantController.swift; sourceTree = "<group>"; };
 		A9B948D421C55DF500F529E5 /* PlantPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantPost.swift; sourceTree = "<group>"; };
 		A9D289241FE9CCF000D453B6 /* CalendarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarController.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				A9B948D421C55DF500F529E5 /* PlantPost.swift */,
+				A99CDE6B227675190049149D /* ProfileDetail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				44C01FD121A22F2A00B7855B /* CollectionViewController.swift in Sources */,
 				A938CCF721D96F9F004F28D2 /* ProfileControllerTableViewCell.swift in Sources */,
 				A99CFDCE1FEAE671000BE0FF /* AddAPlantController.swift in Sources */,
+				A99CDE6C227675190049149D /* ProfileDetail.swift in Sources */,
 				A96BD0A01FE9811D0014F9C9 /* ProfileController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

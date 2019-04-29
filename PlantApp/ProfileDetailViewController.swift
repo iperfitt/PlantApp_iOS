@@ -26,8 +26,12 @@ class ProfileDetailViewController: UIViewController {
     
     @IBOutlet weak var fertilizerNeeds: UILabel!
     
+    var plantDetail: ProfileDetail?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        nickname.text = plantDetail?.nickname
 
         // Do any additional setup after loading the view.
     }

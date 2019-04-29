@@ -97,11 +97,21 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
 
    }
     
-    @objc func waterPlant(press:UILongPressGestureRecognizer) {
-        if press.state == .began {
-            
-        }
+//    @objc func waterPlant(press:UILongPressGestureRecognizer) {
+//        if press.state == .began {
+//
+//        }
+//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let plantDetail = ProfileDetail(nicknameText: "hello", commonNameString: "hello",
+                        speciesText: "hello", genusText: "hello", datePurchasedText: "hello",
+                        lightNeedsText: "text", waterNeedsText: "text", fertilizerNeedsText: "text")
+        
+        // Create a new variable to store the instance of PlayerTableViewController
+        let destinationVC = segue.destination as! ProfileDetailViewController
+        destinationVC.plantDetail = plantDetail
     }
 }
+
 
 
