@@ -345,6 +345,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nickname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kUG-0c-ga3">
+                                <rect key="frame" x="37" y="123" width="77" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
@@ -355,6 +362,7 @@
                         <outlet property="datePurchased" destination="0Ig-g4-Kq7" id="0CR-NO-keg"/>
                         <outlet property="fertilizerNeeds" destination="hKh-IU-52C" id="3T1-Xu-Jq6"/>
                         <outlet property="lightNeeds" destination="DFO-H4-xai" id="XiF-A5-hDk"/>
+                        <outlet property="nickname" destination="kUG-0c-ga3" id="nyv-xj-Y5q"/>
                         <outlet property="waterNeeds" destination="aM7-hg-MAo" id="lnO-EB-uXv"/>
                     </connections>
                 </viewController>

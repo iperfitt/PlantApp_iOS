@@ -52,7 +52,6 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProfileControllerTableViewCell
         cell.nickName.setTitle(plantPosts[indexPath.row].nickname, for: .normal)
-        print(indexPath.row)
         cell.lastWateredDate.text = "temp"
         //cell.waterPlant.tag = indexPath.row
         //cell.waterPlant.addTarget(self, action: Selector(("waterPlant")), for: .touchUpInside)
@@ -105,7 +104,7 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let plantDetail = ProfileDetail(nicknameText: "hello", commonNameString: "hello",
                         speciesText: "hello", genusText: "hello", datePurchasedText: "hello",
-                        lightNeedsText: "text", waterNeedsText: "text", fertilizerNeedsText: "text")
+                        lightNeedsText: "hello", waterNeedsText: "hello", fertilizerNeedsText: "hello")
         
         // Create a new variable to store the instance of PlayerTableViewController
         let destinationVC = segue.destination as! ProfileDetailViewController

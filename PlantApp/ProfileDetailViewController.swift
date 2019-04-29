@@ -30,10 +30,15 @@ class ProfileDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        nickname.text = plantDetail?.nickname
-
-        // Do any additional setup after loading the view.
+        print(plantDetail!.nickname as String)
+        nickname.text = plantDetail!.nickname as String
+        commonName.text = plantDetail!.commonName as String
+        Species.text = plantDetail!.species as String
+        Genus.text = plantDetail!.genus as String
+        datePurchased.text = plantDetail!.datePurchased as String
+        lightNeeds.text = plantDetail!.lightNeeds as String
+        waterNeeds.text = plantDetail!.waterNeeds as String
+        fertilizerNeeds.text = plantDetail!.fertilizerNeeds as String
     }
 
 }
