@@ -30,7 +30,6 @@ class ProfileDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(plantDetail!.nickname as String)
         nickname.text = plantDetail!.nickname as String
         commonName.text = plantDetail!.commonName as String
         Species.text = plantDetail!.species as String
