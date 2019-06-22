@@ -75,12 +75,46 @@
                         <outlet property="loginLabel" destination="W1C-hS-pnw" id="UwW-nV-Rod"/>
                         <outlet property="password" destination="12O-HV-Xyc" id="2fl-MU-EAR"/>
                         <outlet property="register" destination="CO1-13-OFf" id="wGN-7e-pxh"/>
-                        <segue destination="OAj-vb-Pvl" kind="show" identifier="ProfileSegue" id="h2I-Ny-u5I"/>
+                        <segue destination="3v2-7w-SaT" kind="show" id="Eqg-W8-Gbn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ni-HW-J4d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="377" y="2"/>
+        </scene>
+        <!--Profile Table View Controller-->
+        <scene sceneID="xvS-D2-8wv">
+            <objects>
+                <tableViewController id="3v2-7w-SaT" customClass="ProfileTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dDt-iN-DGl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="WzG-1j-bro">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WzG-1j-bro" id="9b4-5d-rjZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="3v2-7w-SaT" id="3Kp-dJ-Eb1"/>
+                            <outlet property="delegate" destination="3v2-7w-SaT" id="D1Z-hT-3iX"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="6eg-yc-Ue1" kind="show" id="LZy-QJ-n2j"/>
+                        <segue destination="Jp6-Af-t2r" kind="show" id="uZR-hu-R8i"/>
+                        <segue destination="oSW-W4-e0W" kind="show" id="doF-Py-P27"/>
+                        <segue destination="14b-qB-emK" kind="show" id="A69-5w-mMu"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WlS-MZ-pWh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1366" y="2"/>
         </scene>
         <!--Profile Controller-->
         <scene sceneID="pmW-qo-vak">
@@ -206,15 +240,11 @@
                     <connections>
                         <outlet property="TableView" destination="Vc8-O0-e92" id="sCL-cK-37U"/>
                         <outlet property="tableView" destination="Vc8-O0-e92" id="VU5-e6-aUQ"/>
-                        <segue destination="6eg-yc-Ue1" kind="show" identifier="AddAPlantSegue" id="H4e-5G-zRG"/>
-                        <segue destination="Jp6-Af-t2r" kind="show" identifier="CollectionViewSegue" id="WEJ-uM-5Zx"/>
-                        <segue destination="oSW-W4-e0W" kind="show" identifier="CalendarSegue" id="Zxv-gf-WT4"/>
-                        <segue destination="14b-qB-emK" kind="show" identifier="ProfileDetailSegue" id="Aht-Fc-ySN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Yk-Q1-PoZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1365.5999999999999" y="2.2488755622188905"/>
+            <point key="canvasLocation" x="1366" y="-780"/>
         </scene>
         <!--CollectionViewController-->
         <scene sceneID="Qf4-7J-mz7">
