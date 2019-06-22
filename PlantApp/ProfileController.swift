@@ -16,8 +16,7 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     @IBOutlet var tableView: UITableView!
     
-
-    @IBAction func waterPlant(_ sender: Any) {
+    @IBAction func goToPlantDetails(_ sender: Any) {
         performSegue(withIdentifier: "ProfileDetailSegue", sender: self)
     }
     
@@ -32,6 +31,10 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
     var downloadURLS = [String]()
     
     var imageDownloadURL : String?
+    
+    var nicknameText : String?
+    
+    var myIndex = 0
     
     @IBAction func addAPlant(_ sender: Any) {
         performSegue(withIdentifier: "AddAPlantSegue", sender: self)
@@ -49,21 +52,20 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
         return plantPosts.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-    {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProfileControllerTableViewCell
-        cell.nickname.text = plantPosts[indexPath.row].nickname
-        cell.lastWateredDate.text = "temp"
-        cell.waterPlant.tag = indexPath.row
-        cell.waterPlant.addTarget(self, action: Selector(("waterPlant")), for: .touchUpInside)
+        cell.nickName.setTitle(plantPosts[indexPath.row].nickname, for: .normal)
+        cell.lastWateredDate.text = ""
+        //Declare Storage Reference based off of plant photo url
         let imageStorageRef = Storage.storage().reference(forURL: plantPosts[indexPath.row].photoUrl)
+        //Retreive Plant photo
         imageStorageRef.getData(maxSize: 2 * 1024 * 1024, completion: {(data, error) in
         if let error = error {
             print(error.localizedDescription)
             } else {
             if let imageData = data {
-            let image = UIImage(data: imageData)
-                cell.plantPhoto.image = image
+            let imageToSet = UIImage(data: imageData)
+                cell.plantPhoto.setImage(imageToSet, for: .normal)
                 self.tableView.reloadData()
             
                 }
@@ -73,35 +75,48 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func loadPosts() {
-        Database.database().reference().child("Users").child((Auth.auth().currentUser?.uid)!).child("Plants").observe(.childAdded, with: { (snapshot) in
-            if let dict = snapshot.value as? [String: Any] {
-            let nicknameText = dict["nickName"] as! String
-            let photoUrlString = dict["downloadURL"] as! String
-            let plantPost = PlantPost(nicknameText: nicknameText, photoUrlString: photoUrlString)
-            self.plantPosts.append(plantPost)
-            self.tableView.reloadData()
+        //Retrieve nickname, photo URL storage string from database and store in dict
+        Database.database().reference().child("Users").child((Auth.auth().currentUser?.uid)!)
+        .child("Plants").observe(.childAdded, with: { (snapshot) in
+        if let dict = snapshot.value as? [String: Any] {
+        let nicknameText = dict["nickName"] as! String
+        let photoUrlString = dict["downloadURL"] as! String
+        //Create a new PlantPost using plant specific nickname and URL
+        let plantPost = PlantPost(nicknameText: nicknameText, photoUrlString: photoUrlString)
+        //Append to plantPosts array
+        self.plantPosts.append(plantPost)
+        self.tableView.reloadData()
             
         }
         })
     }
-  
+    
+    
+    func tableView(_    tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        myIndex = indexPath.row
+        print(myIndex)
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.rowHeight = 200.0
         tableView.dataSource = self
         loadPosts()
-        
-        let longPressRec = UILongPressGestureRecognizer(target: self, action: #selector(UIViewController.waterPlant(press: )))
-        longPressRec.minimumPressDuration = 2.0
-        waterPlant.addGestureRecognizer(longPressRec)
-
    }
     
-    @objc func waterPlant(press:UILongPressGestureRecognizer) {
-        if press.state == .began {
-            
-        }
+    //Prepare plant specific data to be sent to ProfileDetailController
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print(myIndex)
+        let plantDetail = ProfileDetail(nicknameText: plantPosts[myIndex].nickname, commonNameString: "hello",
+                        speciesText: "hello", genusText: "hello", datePurchasedText: "hello",
+                        lightNeedsText: "hello", waterNeedsText: "hello", fertilizerNeedsText: "hello")
+        
+        // Create a new variable to store the instance of ProfileDetailController
+        let destinationVC = segue.destination as! ProfileDetailViewController
+        destinationVC.plantDetail = plantDetail
     }
 }
+
 
 
