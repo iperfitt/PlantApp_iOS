@@ -34,6 +34,8 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     var nicknameText : String?
     
+    var myIndex = 0
+    
     @IBAction func addAPlant(_ sender: Any) {
         performSegue(withIdentifier: "AddAPlantSegue", sender: self)
     }
@@ -51,7 +53,6 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        print(indexPath.row)
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProfileControllerTableViewCell
         cell.nickName.setTitle(plantPosts[indexPath.row].nickname, for: .normal)
         cell.lastWateredDate.text = ""
@@ -89,7 +90,13 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
         }
         })
     }
-  
+    
+    
+    func tableView(_    tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        myIndex = indexPath.row
+        print(myIndex)
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,7 +107,8 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     //Prepare plant specific data to be sent to ProfileDetailController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let plantDetail = ProfileDetail(nicknameText: self.nicknameText ?? "N/A", commonNameString: "hello",
+        print(myIndex)
+        let plantDetail = ProfileDetail(nicknameText: plantPosts[myIndex].nickname, commonNameString: "hello",
                         speciesText: "hello", genusText: "hello", datePurchasedText: "hello",
                         lightNeedsText: "hello", waterNeedsText: "hello", fertilizerNeedsText: "hello")
         

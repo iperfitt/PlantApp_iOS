@@ -287,7 +287,7 @@
         <!--Profile Detail View Controller-->
         <scene sceneID="hJg-KL-4sw">
             <objects>
-                <viewController id="14b-qB-emK" customClass="ProfileDetailViewController" customModule="PlantApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="14b-qB-emK" customClass="ProfileDetailViewController" customModule="PlantApp" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EGN-ev-aS7"/>
                         <viewControllerLayoutGuide type="bottom" id="5Vl-e5-9DT"/>
