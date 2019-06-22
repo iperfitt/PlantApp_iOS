@@ -26,18 +26,9 @@ class ProfileDetailViewController: UIViewController {
     
     @IBOutlet weak var fertilizerNeeds: UILabel!
     
-    var plantDetail: ProfileDetail?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        nickname.text = plantDetail!.nickname as String
-        commonName.text = plantDetail!.commonName as String
-        Species.text = plantDetail!.species as String
-        Genus.text = plantDetail!.genus as String
-        datePurchased.text = plantDetail!.datePurchased as String
-        lightNeeds.text = plantDetail!.lightNeeds as String
-        waterNeeds.text = plantDetail!.waterNeeds as String
-        fertilizerNeeds.text = plantDetail!.fertilizerNeeds as String
+        nickname.text = plantPosts[myIndex].nickname
     }
 
 }

@@ -12,9 +12,13 @@ import FirebaseAuth
 import FirebaseStorage
 import SwiftyJSON
 
+var myIndex = 0
+
+var plantPosts = [PlantPost]()
+
 class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet var tableView: UITableView!
+    @IBOutlet var profileTableView: UITableView!
     
     @IBAction func goToPlantDetails(_ sender: Any) {
         performSegue(withIdentifier: "ProfileDetailSegue", sender: self)
@@ -24,8 +28,6 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     let userID = Auth.auth().currentUser!.uid
     
-    var plantPosts = [PlantPost]()
-    
     var photos = [UIImage]()
     
     var downloadURLS = [String]()
@@ -33,8 +35,6 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
     var imageDownloadURL : String?
     
     var nicknameText : String?
-    
-    var myIndex = 0
     
     @IBAction func addAPlant(_ sender: Any) {
         performSegue(withIdentifier: "AddAPlantSegue", sender: self)
@@ -66,7 +66,7 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
             if let imageData = data {
             let imageToSet = UIImage(data: imageData)
                 cell.plantPhoto.setImage(imageToSet, for: .normal)
-                self.tableView.reloadData()
+                self.profileTableView.reloadData()
             
                 }
             }
@@ -84,8 +84,8 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
         //Create a new PlantPost using plant specific nickname and URL
         let plantPost = PlantPost(nicknameText: nicknameText, photoUrlString: photoUrlString)
         //Append to plantPosts array
-        self.plantPosts.append(plantPost)
-        self.tableView.reloadData()
+        plantPosts.append(plantPost)
+        self.profileTableView.reloadData()
             
         }
         })
@@ -94,28 +94,29 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     func tableView(_    tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         myIndex = indexPath.row
-        print(myIndex)
+        performSegue(withIdentifier: "ProfileDetailSegue", sender: self)
+        
     }
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.rowHeight = 200.0
-        tableView.dataSource = self
+        self.profileTableView.rowHeight = 200.0
+        self.profileTableView.dataSource = self
         loadPosts()
    }
     
-    //Prepare plant specific data to be sent to ProfileDetailController
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print(myIndex)
-        let plantDetail = ProfileDetail(nicknameText: plantPosts[myIndex].nickname, commonNameString: "hello",
-                        speciesText: "hello", genusText: "hello", datePurchasedText: "hello",
-                        lightNeedsText: "hello", waterNeedsText: "hello", fertilizerNeedsText: "hello")
-        
-        // Create a new variable to store the instance of ProfileDetailController
-        let destinationVC = segue.destination as! ProfileDetailViewController
-        destinationVC.plantDetail = plantDetail
-    }
+//    //Prepare plant specific data to be sent to ProfileDetailController
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        print(myIndex)
+//        let plantDetail = ProfileDetail(nicknameText: plantPosts[myIndex].nickname, commonNameString: "hello",
+//                        speciesText: "hello", genusText: "hello", datePurchasedText: "hello",
+//                        lightNeedsText: "hello", waterNeedsText: "hello", fertilizerNeedsText: "hello")
+//
+//        // Create a new variable to store the instance of ProfileDetailController
+//        let destinationVC = segue.destination as! ProfileDetailViewController
+//        destinationVC.plantDetail = plantDetail
+//    }
 }
 
 
