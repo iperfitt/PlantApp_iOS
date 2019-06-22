@@ -32,7 +32,7 @@ class LoginController: UIViewController {
                     self.loginLabel.text = error?.localizedDescription
                 }
                 else {
-                    self.performSegue(withIdentifier: "ProfileSegue", sender: self)
+                    self.performSegue(withIdentifier: "ProfileTableViewSegue", sender: self)
                 }
             }
         }
