@@ -123,7 +123,7 @@
                                 <connections>
                                     <outlet property="lastWateredDate" destination="V6i-bJ-6Ah" id="FBU-wm-DPt"/>
                                     <outlet property="nickName" destination="DXo-Jv-4eW" id="3GQ-PR-CKR"/>
-                                    <outlet property="plantPhoto" destination="rfN-De-w6w" id="eW0-JI-BS6"/>
+                                    <outlet property="plantPhoto" destination="rfN-De-w6w" id="i5D-X0-bKx"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

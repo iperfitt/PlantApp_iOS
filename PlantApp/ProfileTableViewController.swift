@@ -14,6 +14,8 @@ import FirebaseAuth
 import FirebaseStorage
 import SwiftyJSON
 
+var myIndex = 0
+
 class ProfileTableViewController: UITableViewController {
     
     @IBAction func goToPlantDetails(_ sender: Any) {
@@ -24,8 +26,6 @@ class ProfileTableViewController: UITableViewController {
     
     let userID = Auth.auth().currentUser!.uid
     
-    var plantPosts = [PlantPost]()
-    
     var photos = [UIImage]()
     
     var downloadURLS = [String]()
@@ -34,7 +34,7 @@ class ProfileTableViewController: UITableViewController {
     
     var nicknameText : String?
     
-    var myIndex = 0
+    var plantPosts = [PlantPost]()
     
         
     @IBAction func addAPlant(_ sender: Any) {
@@ -92,15 +92,17 @@ class ProfileTableViewController: UITableViewController {
             })
     }
     
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        myIndex = indexPath.row
-//    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        myIndex = indexPath.row
+        performSegue(withIdentifier: "ProfileDetailSegue", sender: self)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.rowHeight = 200.0
         tableView.dataSource = self
         loadPosts()
+        print(plantPosts.count)
     }
     
 //    //Prepare plant specific data to be sent to ProfileDetailController
