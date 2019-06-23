@@ -104,7 +104,6 @@
                                             <state key="normal" title="Plant Photo"/>
                                             <connections>
                                                 <action selector="goToPlantDetails:" destination="3v2-7w-SaT" eventType="touchUpInside" id="9Bl-Go-bod"/>
-                                                <action selector="plantPhoto:" destination="3v2-7w-SaT" eventType="touchUpInside" id="fXr-hC-1Fv"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last Watered Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6i-bJ-6Ah">
@@ -118,9 +117,6 @@
                                             <rect key="frame" x="242" y="49" width="69" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Nickname"/>
-                                            <connections>
-                                                <action selector="nickName:" destination="3v2-7w-SaT" eventType="touchUpInside" id="sCq-Ah-mBs"/>
-                                            </connections>
                                         </button>
                                     </subviews>
                                 </tableViewCellContentView>
