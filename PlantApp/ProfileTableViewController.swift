@@ -36,12 +36,6 @@ class ProfileTableViewController: UITableViewController {
     
     var myIndex = 0
     
-    @IBOutlet weak var nickName: UIButton!
-    
-    @IBOutlet weak var lastWateredDate: UILabel!
-    
-    @IBOutlet weak var plantPhoto: UIButton!
-    
         
     @IBAction func addAPlant(_ sender: Any) {
         performSegue(withIdentifier: "AddAPlantSegue", sender: self)
@@ -60,9 +54,9 @@ class ProfileTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        nickName.setTitle(plantPosts[indexPath.row].nickname, for: .normal)
-        self.lastWateredDate.text = ""
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProfileTableViewControllerCell
+        cell.nickName.setTitle(plantPosts[indexPath.row].nickname, for: .normal)
+        cell.lastWateredDate.text = ""
         //Declare Storage Reference based off of plant photo url
         let imageStorageRef = Storage.storage().reference(forURL: plantPosts[indexPath.row].photoUrl)
         //Retreive Plant photo
@@ -72,7 +66,7 @@ class ProfileTableViewController: UITableViewController {
             } else {
                 if let imageData = data {
                     let imageToSet = UIImage(data: imageData)
-                    self.plantPhoto.setImage(imageToSet, for: .normal)
+                    cell.plantPhoto.setImage(imageToSet, for: .normal)
                     self.tableView.reloadData()
                     
                 }
@@ -98,12 +92,9 @@ class ProfileTableViewController: UITableViewController {
             })
     }
     
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        myIndex = indexPath.row
-        print(myIndex)
-    }
-    
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        myIndex = indexPath.row
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -112,17 +103,16 @@ class ProfileTableViewController: UITableViewController {
         loadPosts()
     }
     
-    //Prepare plant specific data to be sent to ProfileDetailController
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print(myIndex)
-        let plantDetail = ProfileDetail(nicknameText: plantPosts[myIndex].nickname, commonNameString: "hello",
-                                        speciesText: "hello", genusText: "hello", datePurchasedText: "hello",
-                                        lightNeedsText: "hello", waterNeedsText: "hello", fertilizerNeedsText: "hello")
-        
-        // Create a new variable to store the instance of ProfileDetailController
-        let destinationVC = segue.destination as! ProfileDetailViewController
-        destinationVC.plantDetail = plantDetail
-    }
+//    //Prepare plant specific data to be sent to ProfileDetailController
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let plantDetail = ProfileDetail(nicknameText: plantPosts[myIndex].nickname, commonNameString: "hello",
+//                                        speciesText: "hello", genusText: "hello", datePurchasedText: "hello",
+//                                        lightNeedsText: "hello", waterNeedsText: "hello", fertilizerNeedsText: "hello")
+//
+//        // Create a new variable to store the instance of ProfileDetailController
+//        let destinationVC = segue.destination as! ProfileDetailViewController
+//        destinationVC.plantDetail = plantDetail
+//    }
 }
 
 

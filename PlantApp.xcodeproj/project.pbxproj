@@ -11,6 +11,7 @@
 		44C01FCF21A22DB100B7855B /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C01FCE21A22DB100B7855B /* MyCollectionViewCell.swift */; };
 		44C01FD121A22F2A00B7855B /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C01FD021A22F2A00B7855B /* CollectionViewController.swift */; };
 		44EE3AFF21A261940040B707 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE3AFE21A261940040B707 /* CustomCell.swift */; };
+		A9396A0D22BFFC35008EBEFD /* ProfileTableViewControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9396A0C22BFFC35008EBEFD /* ProfileTableViewControllerCell.swift */; };
 		A96BD06E1FE96F080014F9C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96BD06D1FE96F080014F9C9 /* AppDelegate.swift */; };
 		A96BD0731FE96F080014F9C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A96BD0711FE96F080014F9C9 /* Main.storyboard */; };
 		A96BD0751FE96F080014F9C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A96BD0741FE96F080014F9C9 /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		44C01FD021A22F2A00B7855B /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		44EE3AFE21A261940040B707 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		452C481D59D124CB68C68A3A /* Pods-PlantApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlantApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlantApp/Pods-PlantApp.debug.xcconfig"; sourceTree = "<group>"; };
+		A9396A0C22BFFC35008EBEFD /* ProfileTableViewControllerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewControllerCell.swift; sourceTree = "<group>"; };
 		A96BD06A1FE96F080014F9C9 /* PlantApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A96BD06D1FE96F080014F9C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A96BD0721FE96F080014F9C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				A9D289241FE9CCF000D453B6 /* CalendarController.swift */,
 				A96BD09B1FE975E20014F9C9 /* LoginController.swift */,
 				A99CFDCD1FEAE671000BE0FF /* AddAPlantController.swift */,
+				A9396A0C22BFFC35008EBEFD /* ProfileTableViewControllerCell.swift */,
 				A9F0EC7522BFEFBB005CAF7A /* ProfileTableViewController.swift */,
 				A96BD0711FE96F080014F9C9 /* Main.storyboard */,
 				A96BD0761FE96F080014F9C9 /* LaunchScreen.storyboard */,
@@ -377,6 +380,7 @@
 				A96BD09C1FE975E20014F9C9 /* LoginController.swift in Sources */,
 				A96BD06E1FE96F080014F9C9 /* AppDelegate.swift in Sources */,
 				44C01FCF21A22DB100B7855B /* MyCollectionViewCell.swift in Sources */,
+				A9396A0D22BFFC35008EBEFD /* ProfileTableViewControllerCell.swift in Sources */,
 				A9822246224FD754009D44E3 /* ProfileDetailViewController.swift in Sources */,
 				A9B948D521C55DF500F529E5 /* PlantPost.swift in Sources */,
 				A9D289251FE9CCF000D453B6 /* CalendarController.swift in Sources */,
