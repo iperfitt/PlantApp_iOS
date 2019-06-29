@@ -30,9 +30,9 @@ class ProfileDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        print(myIndex)
-//        print(plantPosts[myIndex].nickname)
-//        nickname.text = plantPosts[myIndex].nickname
+        print(myIndex)
+        self.nickname.text = plantPosts[myIndex].nickname
+
     }
 
 }

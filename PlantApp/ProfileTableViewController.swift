@@ -15,6 +15,7 @@ import FirebaseStorage
 import SwiftyJSON
 
 var myIndex = 0
+var plantPosts = [PlantPost]()
 
 class ProfileTableViewController: UITableViewController {
     
@@ -33,8 +34,6 @@ class ProfileTableViewController: UITableViewController {
     var imageDownloadURL : String?
     
     var nicknameText : String?
-    
-    var plantPosts = [PlantPost]()
     
         
     @IBAction func addAPlant(_ sender: Any) {
@@ -78,31 +77,35 @@ class ProfileTableViewController: UITableViewController {
     func loadPosts() {
         //Retrieve nickname, photo URL storage string from database and store in dict
         Database.database().reference().child("Users").child((Auth.auth().currentUser?.uid)!)
-            .child("Plants").observe(.childAdded, with: { (snapshot) in
-                if let dict = snapshot.value as? [String: Any] {
-                    let nicknameText = dict["nickName"] as! String
-                    let photoUrlString = dict["downloadURL"] as! String
+            .child("Plants").observeSingleEvent(of: .value, with: { (snapshot) in
+                let dict = snapshot.value as? [String: Any]
+//                print(dict?.count)
+                for post in dict! {
+                    let dict2 = post.value as? [String: Any]
+                    let nicknameText = dict2?["nickName"] as! String
+                    let photoUrlString = dict2?["downloadURL"] as! String
                     //Create a new PlantPost using plant specific nickname and URL
                     let plantPost = PlantPost(nicknameText: nicknameText, photoUrlString: photoUrlString)
                     //Append to plantPosts array
-                    self.plantPosts.append(plantPost)
+                    plantPosts.append(plantPost)
+                    print(plantPost)
                     self.tableView.reloadData()
-                    
                 }
-            })
+        })
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         myIndex = indexPath.row
+        print(myIndex)
         performSegue(withIdentifier: "ProfileDetailSegue", sender: self)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.rowHeight = 200.0
-        tableView.dataSource = self
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
         loadPosts()
-        print(plantPosts.count)
     }
     
 //    //Prepare plant specific data to be sent to ProfileDetailController
